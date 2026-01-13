@@ -5,7 +5,7 @@
 Ideate Studio - Documentation Technique
 =====================================================
 
-.. image:: _static/logo.png
+.. image:: image/prrr.png
    :alt: Ideate Studio Logo
    :align: center
    :width: 200px
@@ -319,4 +319,5 @@ Contact & Contribution
 ----
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
