@@ -1,0 +1,42 @@
+{
+  "name": "conception",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "check-models": "node scripts/check-models.js",
+    "test-hf": "node scripts/test-huggingface.js",
+    "check-mistral": "node scripts/check-mistral.js",
+    "test-mistral": "node scripts/check-mistral.js",
+    "test-stability": "node scripts/test-stability.js",
+    "check-stability": "node scripts/test-stability.js",
+    "setup": "npm run check-models && npm run check-mistral && npm run check-stability",
+    "postinstall": "npm run check-models"
+  },
+  "dependencies": {
+    "@huggingface/inference": "^4.13.4",
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "^2.38.0",
+    "jimp": "^0.22.10",
+    "next": "^14.2.33",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sharp": "^0.34.5",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.6",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/react": "19.2.7",
+    "autoprefixer": "^10.4.16",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.53.0",
+    "eslint-config-next": "14.0.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.2.2"
+  }
+}
