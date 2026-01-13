@@ -35,16 +35,7 @@ Plateforme de conception industrielle assistée par IA avec Next.js 16.0.0 et Su
 
 5. Ouvrir [http://localhost:3000](http://localhost:3000)
 
-## Structure du projet
 
-\`\`\`
-conception/
-├── app/                 # Pages Next.js 13+ (App Router)
-├── components/          # Composants React
-├── lib/                # Utilitaires et configuration
-├── public/             # Fichiers statiques
-└── middleware.js       # Middleware d'authentification
-\`\`\`
 
 ## Scripts disponibles
 
@@ -56,3 +47,4 @@ conception/
 ## Déploiement
 
 Le projet peut être déployé sur Vercel, Netlify, ou toute autre plateforme supportant Next.js.
+
