@@ -1068,8 +1068,8 @@ Approches Stratégiques de Conception Industrielle Assistée par IA
      - Raffinement progressif par cycles d'amélioration
      - Conversion IA d'images en modèles 3D optimisés
 
-.. figure:: _static/workflow_design_rapide_detailed.png
-   :alt: Architecture détaillée du workflow Design Rapide
+.. figure:: image/differents.png
+   :alt: les différents approches utilisés
    :align: center
    :width: 100%
    :class: workflow-diagram
@@ -2469,6 +2469,7 @@ La plateforme démontre la faisabilité d'intégrer des composants complexes - i
 
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
 
 
