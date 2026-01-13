@@ -1121,6 +1121,520 @@ Tableau Comparatif Synthétique
    * ★★★★☆ : 3-10 secondes
    * ★★★☆☆ : 10-20 secondes
    * ★★☆☆☆ : 20-40 secondes
+.. Ideate - Documentation Technique documentation master file, created by
+   sphinx-quickstart on Mon Jan 13 2025.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Ideate - Plateforme de Conception Industrielle Assistée par IA
+===============================================================
+
+.. image:: _static/logo_ideate.png
+   :alt: Logo Ideate
+   :align: center
+   :width: 300px
+
+---
+
+Les différentes approches utilisées
+===================================
+
+La plateforme Ideate propose trois approches distinctes pour répondre aux différents besoins en conception industrielle :
+
+Approche 1 : Design Rapide avec Analyse DfX
+--------------------------------------------
+
+**Objectif** : Génération rapide de concepts avec évaluation DfX en temps réel.
+
+Cette approche permet aux designers de générer rapidement des concepts de produits à partir de briefs textuels ou de croquis, avec une analyse immédiate des critères Design for Excellence (DfX).
+
+**Caractéristiques principales** :
+
+- Génération texte→image et croquis→image
+- Analyse DfX automatique (DFA, DFM, DFS, DFSust)
+- Raffinement guidé par l'IA
+- Gestion de projet intégrée
+
+Approche 2 : Design Itératif Avancé
+------------------------------------
+
+**Objectif** : Processus d'amélioration progressive par itérations successives.
+
+Cette méthodologie permet d'affiner un design sur plusieurs cycles, en intégrant du feedback à chaque étape pour optimiser le résultat final.
+
+**Caractéristiques principales** :
+
+- Processus en 5 étapes structurées
+- Feedback humain intégré à chaque itération
+- Suivi d'évolution visuel
+- Export multi-format
+
+Approche 3 : Transformation 3D Automatisée
+-------------------------------------------
+
+**Objectif** : Conversion d'images 2D en modèles 3D optimisés pour fabrication.
+
+Grâce à l'IA Stable Fast 3D de Stability AI, cette approche transforme n'importe quelle image en modèle 3D prêt pour l'impression 3D, la visualisation ou l'intégration dans des outils CAO.
+
+**Caractéristiques principales** :
+
+- Génération automatique de maillages 3D
+- Paramétrage avancé des textures et résolutions
+- Formats de sortie industriels (GLB, OBJ)
+- Visualisation intégrée
+
+.. image:: _static/approches_comparaison.png
+   :alt: Comparaison des trois approches Ideate
+   :align: center
+   :width: 800px
+   :class: bordered-image
+
+*Figure 1 : Vue comparative des trois approches de conception disponibles sur Ideate*
+
+Workflows détaillés
+===================
+
+Workflow 1 : Design Rapide avec Analyse DfX
+-------------------------------------------
+
+.. figure:: _static/workflow_rapide.png
+   :alt: Workflow du Design Rapide
+   :align: center
+   :width: 900px
+   :class: bordered-image
+
+   *Figure 2 : Workflow détaillé de l'approche Design Rapide*
+
+Étape 1 : Configuration du Concept
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Sélection des paramètres** :
+
+.. code-block:: javascript
+
+   const [specifications, setSpecifications] = useState({
+     point_vue: "vue trois-quarts",
+     style_rendu: "photographie produit",
+     hauteur: 512,
+     largeur: 512,
+     aspect: "DFM"
+   });
+
+**Génération du prompt** :
+
+Le système utilise un générateur de prompt intelligent qui combine :
+
+1. Catégorie produit (7 catégories disponibles)
+2. Focus design (6 aspects DfX)
+3. Style visuel (9 styles prédéfinis)
+4. Instructions personnalisées
+
+**Génération avec Mistral** :
+
+.. code-block:: javascript
+
+   const genererBriefDesign = async () => {
+     const promptSysteme = `Vous êtes un designer industriel expert...`;
+     const reponse = await fetch('/api/generate-prompt', {
+       method: 'POST',
+       body: JSON.stringify({ prompt: promptSysteme })
+     });
+   };
+
+Étape 2 : Génération d'Image
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Dualité des moteurs** :
+
+*Mode Texte→Image* : Hugging Face (SDXL, SD3.5, FLUX)
+*Mode Croquis→Image* : Stability AI + ControlNet
+
+**Pipeline de génération** :
+
+.. code-block:: javascript
+
+   const genererImage = async () => {
+     const formData = new FormData();
+     formData.append('prompt', promptDesign);
+     formData.append('model', modeleSelectionne);
+     formData.append('specifications', JSON.stringify(specifications));
+     
+     if (mode === "Croquis → Image" && fichierCroquis) {
+       formData.append('sketch', fichierCroquis);
+     }
+   };
+
+Étape 3 : Analyse DfX Automatique
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Appel à l'API DfX** :
+
+.. code-block:: javascript
+
+   const analyserAvecDfx = async (imageBase64, prompt, aspect, category) => {
+     const response = await fetch('/api/generate-dfx-report', {
+       method: 'POST',
+       body: JSON.stringify({
+         imageData: imageBase64,
+         prompt,
+         aspect,
+         category
+       })
+     });
+   };
+
+**Métriques évaluées** :
+
+- *DFA* : Nombre de pièces, accessibilité, orientation
+- *DFM* : Complexité géométrique, tolérance, matériaux
+- *DFS* : Modularité, points d'accès, standardisation
+- *DFSust* : Recyclabilité, énergie, impact environnemental
+
+Étape 4 : Raffinement Guidé
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Système de recommandation** :
+
+.. code-block:: javascript
+
+   const raffinerDesignDfx = async (projectId, currentPrompt, currentMetrics) => {
+     const response = await fetch('/api/refine-dfx', {
+       method: 'POST',
+       body: JSON.stringify({
+         projectId,
+         currentPrompt,
+         currentMetrics,
+         currentScore
+       })
+     });
+   };
+
+**Améliorations suggérées** :
+
+1. Modification du prompt pour optimiser les scores faibles
+2. Ajustement des paramètres de génération
+3. Suggestions de variantes
+
+Étape 5 : Gestion de Projet
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Structure de données** :
+
+.. code-block:: javascript
+
+   const iterationData = {
+     project_id: projet.id,
+     iteration_number: iterationActuelle,
+     image_url: resultat.image,
+     prompt: promptDesign,
+     model_used: modeleSelectionne,
+     dfx_score: dfxResult.score,
+     dfx_metrics: dfxResult.metrics,
+     dfx_report: dfxResult.report
+   };
+
+**Export multi-format** :
+
+- Images individuelles (PNG haute résolution)
+- Toutes les itérations (batch download)
+- Projet complet (JSON structuré)
+- Rapport DfX (HTML/PDF)
+
+Workflow 2 : Design Itératif Avancé
+------------------------------------
+
+.. figure:: _static/workflow_iteratif.png
+   :alt: Workflow du Design Itératif
+   :align: center
+   :width: 900px
+   :class: bordered-image
+
+   *Figure 3 : Workflow en 5 étapes de l'approche itérative*
+
+Étape 1 : Brief Initial
+^^^^^^^^^^^^^^^^^^^^^^^
+
+**Collecte des exigences** :
+
+1. Sélection de la catégorie produit
+2. Définition du focus design
+3. Choix du style visuel
+4. Instructions supplémentaires
+
+**Création du projet** :
+
+.. code-block:: javascript
+
+   const demarrerProjet = async () => {
+     const { data: projet, error } = await supabase
+       .from('design_projects')
+       .insert({
+         user_id: utilisateur.id,
+         title: `${categorie} - ${focus} - ${style}`,
+         type: 'iterative',
+         status: 'in_progress'
+       })
+       .select()
+       .single();
+   };
+
+Étape 2 : Première Itération
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Choix du point de départ** :
+
+- À partir d'un croquis (ControlNet)
+- À partir d'un prompt (SDXL/FLUX)
+- À partir d'une image existante
+
+**Génération initiale** :
+
+.. code-block:: javascript
+
+   const genererIteration = async (type = 'first') => {
+     const iterationNum = iterations.length + 1;
+     const mode = fichierCroquis && type === 'first' 
+       ? "Croquis → Image" 
+       : "Texte → Image";
+   };
+
+Étape 3 : Évaluation et Feedback
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Interface de feedback** :
+
+.. code-block:: javascript
+
+   const [feedbackAmelioration, setFeedbackAmelioration] = useState("");
+   
+   <textarea
+     value={feedbackAmelioration}
+     onChange={(e) => setFeedbackAmelioration(e.target.value)}
+     placeholder="Exemple: Rendre les angles plus arrondis..."
+   />
+
+**Types de feedback supportés** :
+
+1. *Forme* : Dimensions, proportions, courbures
+2. *Matériaux* : Textures, finitions, couleurs
+3. *Fonctionnalités* : Éléments mécaniques, ergonomie
+4. *Style* : Esthétique, cohérence visuelle
+
+Étape 4 : Itérations Successives
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Boucle d'amélioration** :
+
+.. code-block:: javascript
+
+   // Amélioration avec feedback
+   await genererIteration('improvement');
+   
+   // Nouvelle itération sans feedback
+   const iterationSuivanteSansFeedback = async () => {
+     setFeedbackAmelioration("");
+     await genererIteration('improvement');
+   };
+
+**Intégration du feedback** :
+
+1. Analyse sémantique du texte
+2. Mapping vers des paramètres de génération
+3. Ajustement des poids ControlNet
+4. Modification du prompt de base
+
+Étape 5 : Finalisation
+^^^^^^^^^^^^^^^^^^^^^^
+
+**Sélection de la version finale** :
+
+.. code-block:: javascript
+
+   const terminerProjet = async () => {
+     await supabase
+       .from('design_projects')
+       .update({
+         status: 'completed',
+         final_iteration_id: iterationActuelle.id
+       })
+       .eq('id', projetId);
+   };
+
+**Rapport d'évolution** :
+
+- Graphique des scores DfX par itération
+- Timeline visuelle des changements
+- Synthèse des modifications
+- Recommandations pour production
+
+Workflow 3 : Transformation 3D
+------------------------------
+
+.. figure:: _static/workflow_3d.png
+   :alt: Workflow de Transformation 3D
+   :align: center
+   :width: 900px
+   :class: bordered-image
+
+   *Figure 4 : Workflow complet de génération 3D à partir d'images*
+
+Étape 1 : Préparation de l'Image
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Critères d'image optimale** :
+
+- Format : PNG, JPG, JPEG (carré recommandé)
+- Résolution : 512×512px minimum (1024×1024px idéal)
+- Composition : Objet centré, fond contrasté
+- Éclairage : Uniforme, pas d'ombres prononcées
+
+**Upload et prétraitement** :
+
+.. code-block:: javascript
+
+   <ImageUploader3D
+     onImageUpload={setImageSource}
+     disabled={chargement}
+   />
+
+**Validation automatique** :
+
+1. Vérification du format et de la taille
+2. Analyse de la composition
+3. Détection de l'objet principal
+4. Estimation de la complexité
+
+Étape 2 : Paramétrage 3D
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Configuration du modèle** :
+
+.. code-block:: javascript
+
+   const [parametres, setParametres] = useState({
+     texture_resolution: 1024,
+     foreground_ratio: 0.85,
+     remesh_option: 'triangle'
+   });
+
+**Options de maillage** :
+
+- *none* : Conservation du maillage original
+- *triangle* : Maillage standard (recommandé)
+- *quad* : Quadrilatères (optimisé pour animation)
+
+**Réglages avancés** :
+
+1. Résolution des textures (512px à 2048px)
+2. Ratio avant-plan/arrière-plan (0.1 à 1.0)
+3. Niveau de détail géométrique
+4. Optimisation pour impression 3D
+
+Étape 3 : Génération avec Stable Fast 3D
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Pipeline de reconstruction** :
+
+.. code-block:: javascript
+
+   const genererModele3D = async () => {
+     const formData = new FormData();
+     formData.append('title', titreProjet);
+     formData.append('image', imageSource);
+     formData.append('texture_resolution', parametres.texture_resolution);
+     
+     const response = await fetch('/api/generate-3d', {
+       method: 'POST',
+       body: formData
+     });
+   };
+
+**Processus IA** :
+
+1. Segmentation de l'objet
+2. Reconstruction de la profondeur
+3. Génération du maillage 3D
+4. Projection des textures
+5. Optimisation topologique
+
+Étape 4 : Post-traitement
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Optimisations automatiques** :
+
+- Réduction du nombre de polygones
+- Correction des non-manifold geometry
+- Unwrapping UV automatique
+- Génération des normales et tangentes
+
+**Génération des sorties** :
+
+.. code-block:: javascript
+
+   const resultatTransformation = {
+     output_glb_url: "https://.../model.glb",
+     thumbnail_url: "https://.../preview.jpg",
+     file_size: 5242880, // 5MB
+     processing_time: 127 // secondes
+   };
+
+Étape 5 : Visualisation et Export
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Visualiseur intégré** :
+
+.. code-block:: javascript
+
+   <ModelViewer
+     glbUrl={resultatTransformation.output_glb_url}
+     thumbnailUrl={resultatTransformation.thumbnail_url}
+     fileName={`${titreProjet}.glb`}
+   />
+
+**Fonctionnalités du visualiseur** :
+
+1. Rotation, zoom, pan libre
+2. Vue fil de fer/texturée
+3. Mesures approximatives
+4. Export screenshots
+
+**Formats d'export supportés** :
+
++----------------+---------------------+-----------------------------------+
+| Format         | Usage               | Compatibilité                     |
++================+=====================+===================================+
+| GLB (glTF)     | Standard web/Unity  | Blender, Unity, Unreal, Three.js  |
++----------------+---------------------+-----------------------------------+
+| OBJ            | CAO/Impression 3D   | Maya, 3ds Max, Cura, PrusaSlicer  |
++----------------+---------------------+-----------------------------------+
+| STL            | Impression 3D       | Tous les slicers 3D               |
++----------------+---------------------+-----------------------------------+
+| FBX            | Animation           | Maya, Blender, Unity, Unreal      |
++----------------+---------------------+-----------------------------------+
+
+**Intégration avec outils externes** :
+
+1. *Blender* : Script Python d'import automatique
+2. *Unity* : Package d'import avec matériaux PBR
+3. *Fusion 360* : Conversion pour modélisation paramétrique
+4. *Cura/PrusaSlicer* : Profils d'impression optimisés
+
+Tableau Comparatif des Workflows
+--------------------------------
+
++---------------------+----------------------+---------------------+----------------------+
+| Caractéristique     | Design Rapide        | Design Itératif     | Transformation 3D    |
++=====================+======================+=====================+======================+
+| Temps moyen         | 2-5 minutes         | 15-30 minutes       | 3-10 minutes         |
++---------------------+----------------------+---------------------+----------------------+
+| Complexité          | Faible à moyenne    | Moyenne à élevée    | Moyenne              |
++---------------------+----------------------+---------------------+----------------------+
+| Sorties principales | Images 2D + DfX     | Images 2D + Évolution| Modèles 3D + Textures|
++---------------------+----------------------+---------------------+----------------------+
+| Interaction IA      | Automatique         | Guidée              | Automatique          |
++---------------------+----------------------+---------------------+----------------------+
+| Meilleur usage      | Exploration concept | Raffinement design  | Prototypage 3D       |
++---------------------+----------------------+---------------------+----------------------+
 
 
 Contact & Contribution
@@ -1149,6 +1663,7 @@ Contact & Contribution
 ----
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
 
 
