@@ -1272,7 +1272,7 @@ Workflows Détaillés - Architectures et Exécution
 Workflow 1: Pipeline de Design Rapide avec DfX
 ----------------------------------------------
 
-.. figure:: _static/workflow_design_rapide_detailed.png
+.. figure:: image/RAPIDE.png
    :alt: Architecture détaillée du workflow Design Rapide
    :align: center
    :width: 100%
@@ -1657,7 +1657,7 @@ Workflow 1: Pipeline de Design Rapide avec DfX
 Workflow 2: Processus Itératif d'Optimisation
 ==============================================
 
-.. figure:: _static/workflow_iteratif_detailed.png
+.. figure:: image/ITERATIVE.png
    :alt: Diagramme détaillé du workflow itératif
    :align: center
    :width: 100%
@@ -1950,7 +1950,7 @@ Phase 5: Génération de Rapport Final
 Workflow 3: Pipeline de Transformation 3D
 ----------------------------------------
 
-.. figure:: _static/workflow_3d_detailed.png
+.. figure:: image/3D.png
    :alt: Architecture détaillée du pipeline 3D
    :align: center
    :width: 100%
@@ -2350,7 +2350,7 @@ Workflow 3: Pipeline de Transformation 3D
 Architecture Frontend
 =====================
 
-.. image:: _static/architecture_frontend.png
+.. image:: image/frontend.png
    :alt: Architecture Frontend - Stack Technologique
    :align: center
    :width: 80%
@@ -2362,7 +2362,7 @@ Les composants serveur modernes réduisent la taille des bundles JavaScript côt
 Architecture de Base de Données
 ===============================
 
-.. image:: _static/architecture_bdd.png
+.. image:: image/base de donne.png
    :alt: Architecture Base de Données - PostgreSQL & Supabase
    :align: center
    :width: 80%
@@ -2374,7 +2374,7 @@ Supabase étend ces capacités avec des services managés incluant la réplicati
 Collaboration pour la Conception
 ================================
 
-.. image:: _static/collaboration_conception.png
+.. image:: image/collaboration.png
    :alt: Écosystème de Collaboration pour le Design Industriel
    :align: center
    :width: 80%
@@ -2386,7 +2386,7 @@ Le module Profil gère l'identité numérique professionnelle, servant de vitrin
 Onglets de Gestion et d'Assistance
 ==================================
 
-.. image:: _static/onglets_gestion.png
+.. image:: image/outil.png
    :alt: Interface de Gestion et d'Assistance Utilisateur
    :align: center
    :width: 80%
@@ -2469,6 +2469,7 @@ La plateforme démontre la faisabilité d'intégrer des composants complexes - i
 
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
 
 
