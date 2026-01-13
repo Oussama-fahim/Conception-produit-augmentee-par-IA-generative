@@ -1,8 +1,5 @@
-.. Ideate Studio Documentation master file
-   Created for comprehensive project documentation
-   
 =====================================================
-Ideate Studio - Documentation Technique
+Ideate design Studio - Documentation Technique
 =====================================================
 
 .. image:: image/prrr.png
@@ -256,57 +253,6 @@ Ideate Studio se distingue par :
 
 ----
 
-Documentation Détaillée
-=======================
-
-.. toctree::
-   :maxdepth: 2
-   :caption: 📘 Guide d'Utilisation
-   :numbered:
-
-   structure_projet
-   technologies
-   modeles_ia
-   approches
-   workflows
-
-.. toctree::
-   :maxdepth: 2
-   :caption: 🏗️ Architecture Technique
-   :numbered:
-
-   frontend
-   base_donnees
-   projets_profils
-   collaboration
-   modules_supplementaires
-
-.. toctree::
-   :maxdepth: 2
-   :caption: 📊 Analyse & Résultats
-   :numbered:
-
-   resultats
-   ameliorations_futures
-   conclusion
-
-.. toctree::
-   :maxdepth: 1
-   :caption: 📎 Annexes
-
-   glossaire
-   references
-   faq
-
-Indices et Tables
-=================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
-----
-
 Contact & Contribution
 ======================
 
@@ -333,4 +279,5 @@ Contact & Contribution
 ----
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
