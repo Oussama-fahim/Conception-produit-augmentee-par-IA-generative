@@ -250,380 +250,878 @@ Ideate Studio se distingue par :
 
 ----
 
-Modèles utilisés
+================
+Modèles IA
 ================
 
-L'application utilise 15 modèles d'IA spécialisés couvrant la génération d'images 2D, 3D, de texte et l'analyse visuelle.
+Architecture intelligente de 15 modèles d'IA spécialisés orchestrant la génération d'images 2D/3D, l'analyse visuelle avancée et la génération de texte contextuel.
 
-.. contents::
+.. contents:: Navigation
    :depth: 3
    :local:
+   :backlinks: top
 
-Modèles de Génération d'Images 2D
----------------------------------
+.. note::
+   Cette documentation décrit l'écosystème complet des modèles IA intégrés à l'application. Chaque modèle est sélectionné pour ses performances optimales dans un cas d'usage spécifique du workflow de design industriel.
 
-Stable Diffusion 3 Medium (Diffusers)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+═══════════════════════════════════════
+Vue d'Ensemble de l'Architecture
+═══════════════════════════════════════
 
-**Fournisseur:** Hugging Face  
-**Type:** Diffusion de texte à image  
-**Résolution:** SDXL (1024x1024 et variantes)  
-**Endpoint:** ``stabilityai/stable-diffusion-3-medium-diffusers``  
+L'application exploite une architecture multi-modèles orchestrée pour offrir un workflow de design industriel complet, de la génération de concepts à l'analyse DfX (Design for X) automatisée.
 
-**Description:**  
-Modèle équilibré offrant un bon compromis entre qualité et vitesse. Spécialement optimisé pour les designs industriels, il génère des images détaillées avec une compréhension contextuelle avancée.
+Principes Fondamentaux
+----------------------
 
-**Utilisation dans le projet:**
-- Mode Design Rapide & Itératif
-- Génération initiale de concepts
-- Intégration avec l'analyse DfX
+**Orchestration Intelligente**
+   Les 15 modèles collaborent dans un pipeline optimisé où chaque modèle apporte son expertise spécifique au moment approprié du workflow.
 
-**Caractéristiques techniques:**
-- Dimensions supportées: 1024x1024, 1152x896, 896x1152
-- Inférence: 30-50 steps recommandés
-- Guidance scale: 7.5 optimal
+**Fallback Multi-Niveaux**
+   Système de redondance garantissant la continuité de service même en cas de défaillance d'un endpoint API.
+
+**Optimisation Contextuelle**
+   Sélection automatique du modèle optimal basée sur les contraintes du projet (vitesse, qualité, fidélité).
+
+Statistiques Clés
+-----------------
+
+.. list-table::
+   :widths: 30 70
+   :header-rows: 0
+
+   * - **Total de modèles**
+     - 15 modèles spécialisés
+   * - **Fournisseurs**
+     - 3 plateformes (Hugging Face, Stability AI, Mistral AI)
+   * - **Modalités**
+     - Texte-à-Image (8), Image-à-3D (1), Vision (1), LLM (1), ControlNet (2), Flux (3)
+   * - **Résolution max**
+     - SDXL (1536×640 pixels)
+   * - **Format 3D**
+     - GLB/glTF avec textures PBR
+
+═══════════════════════════════════════
+Génération d'Images 2D
+═══════════════════════════════════════
+
+Cette catégorie regroupe 8 modèles de diffusion optimisés pour différents scénarios de génération d'images industrielles.
+
+Stable Diffusion 3 Medium
+--------------------------
+
+.. admonition:: Modèle de Production Principal
+   :class: important
+
+   Backbone du système de génération rapide, SD3 Medium équilibre performance et qualité pour les itérations fréquentes.
+
+**Fiche Technique**
+
+:Fournisseur: Hugging Face
+:Architecture: Diffusion latente multi-étapes
+:Endpoint: ``stabilityai/stable-diffusion-3-medium-diffusers``
+:Résolution native: 1024×1024 pixels (ratio 1:1)
+:Temps de génération: 8-15 secondes (30 steps)
+
+**Cas d'Usage Optimaux**
+
+* Design rapide et itératif
+* Génération de concepts initiaux
+* Brainstorming visuel haute fréquence
+* Intégration workflow DfX
+
+**Configuration Recommandée**
+
+.. code-block:: python
+
+   {
+       "width": 1024,
+       "height": 1024,
+       "num_inference_steps": 30,
+       "guidance_scale": 7.5,
+       "negative_prompt": "blurry, low quality, distorted",
+       "scheduler": "DPMSolverMultistep"
+   }
+
+**Résolutions Supportées**
+
+.. list-table::
+   :widths: 30 30 40
+   :header-rows: 1
+
+   * - Format
+     - Dimensions
+     - Ratio
+   * - Carré
+     - 1024×1024
+     - 1:1
+   * - Portrait
+     - 896×1152
+     - 7:9
+   * - Paysage
+     - 1152×896
+     - 9:7
+
+**Points Forts**
+
+✓ Compréhension contextuelle avancée des prompts techniques
+✓ Rendu de matériaux industriels réaliste (métal, plastique, composite)
+✓ Gestion cohérente des contraintes géométriques
+✓ Intégration native avec l'analyse DfX
 
 Stable Diffusion 3.5 Large
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 
-**Fournisseur:** Hugging Face  
-**Type:** Diffusion de texte à image  
-**Résolution:** SDXL avancé  
-**Endpoint:** ``stabilityai/stable-diffusion-3.5-large``  
+.. admonition:: Qualité Premium
+   :class: tip
 
-**Description:**  
-Version améliorée de SD3 avec des capacités de rendu photo-réaliste exceptionnelles. Produit des images très détaillées avec une précision textuelle supérieure.
+   Version élite pour les rendus haute fidélité et les présentations clients finales.
 
-**Utilisation dans le projet:**
-- Designs de haute fidélité
-- Présentations finales
-- Visualisations réalistes
+**Fiche Technique**
+
+:Fournisseur: Hugging Face
+:Architecture: Diffusion avancée avec attention étendue
+:Endpoint: ``stabilityai/stable-diffusion-3.5-large``
+:Résolution native: 1024×1024 (extensible)
+:Temps de génération: 20-30 secondes (50 steps)
+
+**Cas d'Usage Optimaux**
+
+* Rendus photo-réalistes pour présentations
+* Visualisations marketing haute qualité
+* Documentation technique premium
+* Validation finale de concepts
+
+**Améliorations vs SD3 Medium**
+
+.. list-table::
+   :widths: 30 35 35
+   :header-rows: 1
+
+   * - Critère
+     - SD3 Medium
+     - SD3.5 Large
+   * - Fidélité prompt
+     - 87%
+     - 96%
+   * - Détails fins
+     - Bon
+     - Exceptionnel
+   * - Cohérence matériaux
+     - Très bon
+     - Photo-réaliste
+   * - Temps génération
+     - 8-15s
+     - 20-30s
+
+**Configuration Premium**
+
+.. code-block:: python
+
+   {
+       "width": 1024,
+       "height": 1024,
+       "num_inference_steps": 50,
+       "guidance_scale": 8.0,
+       "negative_prompt": "low quality, artifacts, noise",
+       "clip_skip": 2,
+       "use_karras_sigmas": true
+   }
 
 Stable Diffusion XL Base
-^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------
 
-**Fournisseur:** Hugging Face  
-**Type:** Diffusion de texte à image  
-**Résolution:** SDXL standard  
-**Endpoint:** ``stabilityai/stable-diffusion-xl-base-1.0``  
+**Fiche Technique**
 
-**Description:**  
-Modèle fondamental pour la génération d'images haute résolution. Excellent pour les détails fins et les compositions complexes.
+:Fournisseur: Hugging Face
+:Architecture: SDXL fondamental
+:Endpoint: ``stabilityai/stable-diffusion-xl-base-1.0``
+:Particularité: Support multi-résolutions étendu
 
-**Dimensions SDXL autorisées:**
-- 1024x1024
-- 1152x896 / 896x1152
-- 1216x832 / 832x1216
-- 1344x768 / 768x1344
-- 1536x640 / 640x1536
+**Résolutions SDXL Autorisées**
+
+.. code-block:: text
+
+   1024×1024  [1:1]    - Standard carré
+   1152×896   [9:7]    - Paysage modéré
+   896×1152   [7:9]    - Portrait modéré
+   1216×832   [3:2]    - Paysage étendu
+   832×1216   [2:3]    - Portrait étendu
+   1344×768   [16:9]   - Cinématique
+   768×1344   [9:16]   - Mobile vertical
+   1536×640   [21:9]   - Ultra-wide
+   640×1536   [9:21]   - Ultra-tall
+
+**Usage dans le Projet**
+
+Base solide pour compositions complexes nécessitant des formats non-standards ou des détails fins à haute résolution.
 
 Stable Diffusion 3.5 Large Turbo
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------
 
-**Fournisseur:** Hugging Face  
-**Type:** Diffusion de texte à image optimisée  
-**Résolution:** SDXL  
-**Endpoint:** ``stabilityai/stable-diffusion-3.5-large-turbo``  
+.. admonition:: Performance Extrême
+   :class: success
 
-**Description:**  
-Version accélérée pour la génération quasi-temps réel. Idéal pour les itérations rapides et l'exploration de concepts.
+   Génération quasi temps-réel sans compromis majeur sur la qualité.
 
-**Avantages:**
-- Génération en 1-2 secondes
-- Qualité préservée malgré la vitesse
-- Parfait pour le workflow itératif
+**Fiche Technique**
+
+:Fournisseur: Hugging Face
+:Architecture: Diffusion accélérée avec distillation
+:Endpoint: ``stabilityai/stable-diffusion-3.5-large-turbo``
+:Temps de génération: 1-3 secondes (4-8 steps)
+
+**Avantages Clés**
+
+:Vitesse: 10× plus rapide que SD3.5 Large standard
+:Qualité: 90% de la qualité de SD3.5 Large
+:Interactivité: Feedback quasi instantané
+:Workflow: Idéal pour exploration itérative
+
+**Configuration Turbo**
+
+.. code-block:: python
+
+   {
+       "width": 1024,
+       "height": 1024,
+       "num_inference_steps": 6,  # Optimal pour Turbo
+       "guidance_scale": 2.0,      # Plus bas pour Turbo
+       "scheduler": "Euler"         # Rapide et stable
+   }
+
+**Scénarios d'Usage**
+
+* Prototypage rapide d'idées
+* Exploration de variations
+* Démonstrations interactives
+* Tests A/B de concepts
+
+Famille FLUX
+------------
+
+La famille FLUX apporte une architecture novatrice basée sur les flux de génération, offrant des caractéristiques uniques par rapport aux modèles de diffusion classiques.
 
 FLUX.1 Schnell
 ^^^^^^^^^^^^^^
 
-**Fournisseur:** Hugging Face  
-**Type:** Modèle de flux de génération  
-**Résolution:** SDXL  
-**Endpoint:** ``black-forest-labs/FLUX.1-schnell``  
+.. admonition:: Génération Ultra-Rapide
+   :class: note
 
-**Description:**  
-Architecture FLUX optimisée pour la vitesse. Produit des rendus conceptuels instantanés avec une cohérence stylistique.
+   Le plus rapide de la famille FLUX, conçu pour le brainstorming instantané.
 
-**Caractéristiques:**
-- Génération ultra-rapide
-- Style cohérent
-- Idéal pour les brainstormings
+**Fiche Technique**
+
+:Fournisseur: Black Forest Labs
+:Architecture: Flux optimisé vitesse
+:Endpoint: ``black-forest-labs/FLUX.1-schnell``
+:Temps: <2 secondes
+:Particularité: Cohérence stylistique exceptionnelle
+
+**Points Différenciants**
+
+* Architecture flux vs diffusion traditionnelle
+* Style cohérent entre générations multiples
+* Idéal pour exploration créative rapide
+* Rendu conceptuel instantané
 
 FLUX.1 Dev
 ^^^^^^^^^^
 
-**Fournisseur:** Hugging Face  
-**Type:** Modèle de flux expérimental  
-**Résolution:** SDXL  
-**Endpoint:** ``black-forest-labs/FLUX.1-dev``  
+**Fiche Technique**
 
-**Description:**  
-Version de développement pour l'expérimentation et les tests. Permet d'explorer de nouvelles approches de génération.
+:Fournisseur: Black Forest Labs
+:Architecture: Flux expérimental
+:Endpoint: ``black-forest-labs/FLUX.1-dev``
+:Statut: Version développement/recherche
+
+**Usage**
+
+Environnement de test pour nouvelles approches de génération et expérimentation de techniques émergentes.
 
 FLUX.1 Kontext Dev
 ^^^^^^^^^^^^^^^^^^
 
-**Fournisseur:** Hugging Face  
-**Type:** Modèle contextuel  
-**Résolution:** SDXL  
-**Endpoint:** ``black-forest-labs/FLUX.1-Kontext-dev``  
+**Fiche Technique**
 
-**Description:**  
-Spécialisé dans la gestion du contexte dans la génération. Maintient la cohérence à travers les multiples éléments d'une scène.
+:Fournisseur: Black Forest Labs
+:Architecture: Flux avec gestion contextuelle avancée
+:Endpoint: ``black-forest-labs/FLUX.1-Kontext-dev``
+:Spécialité: Cohérence multi-éléments
+
+**Capacités Spéciales**
+
+* Gestion sophistiquée du contexte dans les scènes complexes
+* Maintien de la cohérence entre objets multiples
+* Compréhension des relations spatiales avancée
 
 FLUX.1 Krea Dev
 ^^^^^^^^^^^^^^^
 
-**Fournisseur:** Hugging Face  
-**Type:** Modèle créatif avancé  
-**Résolution:** SDXL  
-**Endpoint:** ``black-forest-labs/FLUX.1-Krea-dev``  
+**Fiche Technique**
 
-**Description:**  
-Focalisé sur la création artistique et générative avancée. Produit des designs innovants et originaux.
+:Fournisseur: Black Forest Labs
+:Architecture: Flux créatif avancé
+:Endpoint: ``black-forest-labs/FLUX.1-Krea-dev``
+:Focus: Innovation et originalité
 
-Modèles de Contrôle par Croquis (ControlNet)
---------------------------------------------
+**Orientation**
+
+Création artistique poussée et génération de designs innovants sortant des schémas conventionnels.
+
+═══════════════════════════════════════
+Contrôle par Croquis (ControlNet)
+═══════════════════════════════════════
+
+Les modèles ControlNet permettent un contrôle précis de la génération via des inputs structurels (croquis, contours, structures).
 
 Control Sketch
-^^^^^^^^^^^^^^
+--------------
 
-**Fournisseur:** Stability AI  
-**Type:** ControlNet pour croquis  
-**Format:** SDXL + ControlNet  
-**Endpoint:** ``v2beta/stable-image/control/sketch``  
+.. admonition:: Transformation Intelligente
+   :class: important
 
-**Description:**  
-Transforme des croquis en images détaillées tout en préservant la structure du dessin original. Utilise des techniques de contrôle de structure pour guider la génération.
+   Transforme vos croquis manuels en rendus industriels détaillés tout en préservant l'intention du design original.
 
-**Paramètres optimaux:**
-- Force de contrôle: 0.7
-- Steps: 30-40
-- Guidance scale: 7
+**Fiche Technique**
 
-**Utilisation dans le projet:**
-- Mode "Croquis → Image"
-- Transformation de dessins techniques
-- Exploration conceptuelle à partir d'esquisses
+:Fournisseur: Stability AI
+:Type: ControlNet pour extraction de structure
+:Endpoint: ``v2beta/stable-image/control/sketch``
+:Format: SDXL + ControlNet conditionnel
+:Input: Image croquis (PNG/JPEG)
 
-Control Structure
-^^^^^^^^^^^^^^^^^
+**Workflow de Transformation**
 
-**Fournisseur:** Stability AI  
-**Type:** ControlNet pour structure  
-**Format:** SDXL + ControlNet  
-**Endpoint:** ``v2beta/stable-image/control/structure``  
+.. mermaid::
 
-**Description:**  
-Maintient la structure géométrique lors des améliorations itératives. Parfait pour le raffinement de designs existants.
+   graph LR
+       A[Croquis manuel] --> B[Extraction contours]
+       B --> C[ControlNet Sketch]
+       C --> D[SDXL conditionné]
+       D --> E[Image détaillée]
+       style C fill:#4CAF50
 
-**Utilisation dans le projet:**
-- Améliorations itératives
-- Raffinement basé sur le feedback
-- Conservation de la structure originale
+**Configuration Optimale**
 
-Modèles de Génération de Texte
-------------------------------
+.. code-block:: python
 
-Mistral 7B (Brief Generator)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   {
+       "control_strength": 0.7,        # Force du contrôle structurel
+       "num_inference_steps": 35,
+       "guidance_scale": 7.0,
+       "controlnet_conditioning_scale": 0.8
+   }
 
-**Fournisseur:** Mistral AI  
-**Type:** Modèle de langage (LLM)  
-**Capacité:** 7 milliards de paramètres  
-**Endpoint:** API Mistral ``/v1/chat/completions``  
-
-**Description:**  
-Génère des briefs design détaillés et traduit les prompts en anglais pour les APIs qui le requièrent. Spécialisé dans la compréhension des contraintes techniques.
-
-**Fonctions principales:**
-1. Génération automatique de prompts
-2. Traduction français → anglais
-3. Enrichissement avec contraintes DfX
-4. Raffinement de prompts basé sur l'analyse
-
-**Configuration typique:**
-- Modèle: ``mistral-small-latest``
-- Température: 0.7
-- Max tokens: 300
-
-Mistral Vision (DfX Analyzer)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Fournisseur:** Mistral AI  
-**Type:** Modèle multimodal (vision + texte)  
-**Capacité:** Analyse d'images avancée  
-
-**Description:**  
-Analyse les images générées pour extraire des métriques DfX (Design for X). Évalue automatiquement la conformité aux principes de design industriel.
-
-**Métriques analysées:**
-- Design for Assembly (DFA): nombre de pièces, types de fixations
-- Design for Manufacturing (DFM): épaisseur de paroi, angles de dépouille
-- Design for Service (DFS): modularité, accessibilité
-- Design for Sustainability (DFSust): matériaux recyclables, efficacité
-
-Modèles de Génération 3D
-------------------------
-
-Stable Fast 3D
-^^^^^^^^^^^^^^
-
-**Fournisseur:** Stability AI  
-**Type:** Génération d'objets 3D à partir d'images 2D  
-**Format:** GLB (glTF binaire)  
-**Endpoints testés:**
-- ``https://api.stability.ai/v2beta/stable-image/3d/stable-fast-3d``
-- ``https://api.stability.ai/v1/generation/3d/stable-fast-3d``
-- ``https://api.stability.ai/v1/generation/stable-fast-3d``
-- ``https://api.stability.ai/v2beta/3d/stable-fast-3d``
-
-**Description:**  
-Transforme des images 2D en modèles 3D texturés optimisés. Utilise des techniques avancées de reconstruction géométrique et de projection de texture.
-
-**Paramètres configurables:**
+**Paramètres de Contrôle**
 
 .. list-table::
+   :widths: 25 25 50
    :header-rows: 1
-   :widths: 30 30 40
-   
+
    * - Paramètre
-     - Valeur par défaut
+     - Plage
+     - Effet
+   * - control_strength
+     - 0.5-0.9
+     - Fidélité au croquis original
+   * - guidance_scale
+     - 5-9
+     - Respect du prompt textuel
+   * - conditioning_scale
+     - 0.6-1.0
+     - Influence du ControlNet
+
+**Cas d'Usage**
+
+* Mode "Croquis → Image" de l'application
+* Transformation de dessins techniques manuels
+* Exploration conceptuelle à partir d'esquisses rapides
+* Affinage de formes organiques complexes
+
+**Recommandations Input**
+
+:Format: PNG ou JPEG
+:Résolution: 1024×1024 minimum
+:Contraste: Élevé (lignes noires sur fond blanc)
+:Détails: Traits clairs et définis
+
+Control Structure
+-----------------
+
+.. admonition:: Raffinement Itératif
+   :class: tip
+
+   Maintient la structure géométrique lors des améliorations successives, essentiel pour le design industriel.
+
+**Fiche Technique**
+
+:Fournisseur: Stability AI
+:Type: ControlNet pour préservation structurelle
+:Endpoint: ``v2beta/stable-image/control/structure``
+:Usage: Raffinement basé sur feedback
+
+**Workflow Itératif**
+
+.. mermaid::
+
+   graph TD
+       A[Image V1] --> B[Feedback utilisateur]
+       B --> C[Control Structure]
+       C --> D[Image V2 améliorée]
+       D --> E{Satisfait?}
+       E -->|Non| B
+       E -->|Oui| F[Image finale]
+       style C fill:#2196F3
+
+**Cas d'Usage**
+
+* Améliorations itératives sans perdre la géométrie
+* Raffinement basé sur retours DfX
+* Conservation de l'ADN structurel du design
+* Variations contrôlées d'un concept validé
+
+**Avantages vs Génération Libre**
+
+✓ Préserve les proportions critiques
+✓ Maintient les axes de symétrie
+✓ Conserve les relations spatiales
+✓ Évite les déformations non-désirées
+
+═══════════════════════════════════════
+Génération et Analyse de Texte
+═══════════════════════════════════════
+
+Les modèles de langage orchestrent l'intelligence du système, de la génération de prompts à l'analyse technique avancée.
+
+Mistral 7B - Brief Generator
+-----------------------------
+
+.. admonition:: Cerveau Linguistique
+   :class: important
+
+   LLM spécialisé générant des briefs design riches et traduisant l'intention utilisateur en prompts optimisés.
+
+**Fiche Technique**
+
+:Fournisseur: Mistral AI
+:Architecture: Transformer 7B paramètres
+:Endpoint: ``/v1/chat/completions``
+:Modèle: ``mistral-small-latest``
+:Contexte: 32k tokens
+
+**Fonctions Principales**
+
+1. **Génération Automatique de Prompts**
+   
+   Transforme un brief court utilisateur en prompt détaillé enrichi de vocabulaire technique.
+
+   .. code-block:: python
+
+      Input:  "chaise ergonomique pour bureau"
+      Output: "ergonomic office chair with lumbar support,
+               adjustable armrests, breathable mesh backrest,
+               5-star base with casters, modern minimalist
+               design, neutral color palette, DFM optimized"
+
+2. **Traduction Contextuelle**
+   
+   Traduction français→anglais préservant les nuances techniques.
+
+3. **Enrichissement DfX**
+   
+   Injection automatique de contraintes Design for X pertinentes.
+
+4. **Raffinement Itératif**
+   
+   Amélioration de prompts basée sur l'analyse des générations précédentes.
+
+**Configuration Typique**
+
+.. code-block:: python
+
+   {
+       "model": "mistral-small-latest",
+       "temperature": 0.7,          # Créativité modérée
+       "max_tokens": 300,
+       "top_p": 0.9,
+       "frequency_penalty": 0.3     # Évite répétitions
+   }
+
+**Workflow de Génération**
+
+.. mermaid::
+
+   graph LR
+       A[Brief FR] --> B[Mistral 7B]
+       B --> C[Traduction EN]
+       B --> D[Enrichissement DfX]
+       C --> E[Prompt optimisé]
+       D --> E
+       E --> F[Génération image]
+       style B fill:#FF9800
+
+**Cas d'Usage**
+
+* Assistant de rédaction de briefs
+* Traduction technique automatique
+* Enrichissement sémantique de prompts
+* Génération de variantes créatives
+
+Mistral Vision - DfX Analyzer
+------------------------------
+
+.. admonition:: Analyse Technique Avancée
+   :class: important
+
+   Modèle multimodal analysant automatiquement les images générées selon les principes DfX du design industriel.
+
+**Fiche Technique**
+
+:Fournisseur: Mistral AI
+:Architecture: Vision-Language Model (VLM)
+:Modalités: Image + Texte
+:Capacité: Analyse technique industrielle
+
+**Métriques DfX Analysées**
+
+Design for Assembly (DFA)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+:Objectif: Évaluer la simplicité d'assemblage
+:Métriques extraites:
+   * Nombre de pièces distinctes
+   * Types de fixations (vis, clips, soudure)
+   * Complexité des interfaces
+   * Accessibilité des points d'assemblage
+
+:Score: 0-100 (100 = optimal)
+
+Design for Manufacturing (DFM)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+:Objectif: Évaluer la fabricabilité
+:Métriques extraites:
+   * Épaisseur de paroi (mm)
+   * Angles de dépouille (degrés)
+   * Rayons de congé
+   * Contre-dépouilles détectées
+   * Complexité géométrique
+
+:Score: 0-100 (100 = facile à fabriquer)
+
+Design for Service (DFS)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+:Objectif: Évaluer la maintenabilité
+:Métriques extraites:
+   * Modularité (nombre de modules)
+   * Accessibilité des composants
+   * Facilité de démontage
+   * Composants remplaçables
+
+:Score: 0-100 (100 = très maintenable)
+
+Design for Sustainability (DFSust)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+:Objectif: Évaluer l'impact environnemental
+:Métriques extraites:
+   * Matériaux recyclables identifiés
+   * Mono-matériau vs multi-matériaux
+   * Efficacité matière
+   * Durabilité estimée
+
+:Score: 0-100 (100 = très durable)
+
+**Workflow d'Analyse**
+
+.. mermaid::
+
+   graph TD
+       A[Image générée] --> B[Mistral Vision]
+       B --> C[Extraction métriques DFA]
+       B --> D[Extraction métriques DFM]
+       B --> E[Extraction métriques DFS]
+       B --> F[Extraction métriques DFSust]
+       C --> G[Rapport consolidé]
+       D --> G
+       E --> G
+       F --> G
+       G --> H[Recommandations]
+       style B fill:#673AB7
+
+**Format de Sortie**
+
+.. code-block:: json
+
+   {
+       "dfa_score": 78,
+       "dfa_metrics": {
+           "part_count": 12,
+           "fastener_types": ["screws", "clips"],
+           "assembly_complexity": "medium"
+       },
+       "dfm_score": 85,
+       "dfm_metrics": {
+           "wall_thickness": "2.5mm",
+           "draft_angles": "3°",
+           "undercuts": 1
+       },
+       "recommendations": [
+           "Réduire le nombre de pièces pour améliorer DFA",
+           "Augmenter les angles de dépouille à 5° pour DFM"
+       ]
+   }
+
+**Intégration Workflow**
+
+L'analyse DfX intervient automatiquement après chaque génération, fournissant un feedback immédiat pour le raffinement itératif.
+
+═══════════════════════════════════════
+Génération 3D
+═══════════════════════════════════════
+
+Stable Fast 3D
+--------------
+
+.. admonition:: Transformation 2D → 3D
+   :class: success
+
+   Génère des modèles 3D texturés optimisés à partir d'images 2D, complétant le workflow du design industriel.
+
+**Fiche Technique**
+
+:Fournisseur: Stability AI
+:Type: Reconstruction 3D par IA
+:Format de sortie: GLB (glTF Binary)
+:Textures: PBR (Physically Based Rendering)
+:Géométrie: Mesh optimisé
+
+**Endpoints Multiples (Fallback)**
+
+L'API Stable Fast 3D dispose de plusieurs endpoints testés pour assurer la disponibilité:
+
+.. code-block:: text
+
+   1. https://api.stability.ai/v2beta/stable-image/3d/stable-fast-3d
+   2. https://api.stability.ai/v1/generation/3d/stable-fast-3d
+   3. https://api.stability.ai/v1/generation/stable-fast-3d
+   4. https://api.stability.ai/v2beta/3d/stable-fast-3d
+
+Le système tente automatiquement les endpoints dans l'ordre jusqu'à succès.
+
+**Paramètres Configurables**
+
+.. list-table::
+   :widths: 30 20 50
+   :header-rows: 1
+
+   * - Paramètre
+     - Défaut
      - Description
    * - texture_resolution
      - 1024
-     - Résolution des textures en pixels
+     - Résolution des textures en pixels (512/1024/2048)
    * - foreground_ratio
      - 0.85
-     - Ratio objet/fond pour l'extraction
+     - Ratio objet/fond pour l'extraction (0.7-0.95)
    * - remesh_option
      - triangle
-     - Méthode de remaillage (triangle/quad)
+     - Méthode de remaillage (triangle/quad/none)
+   * - target_polycount
+     - Auto
+     - Nombre de polygones cible (optimisation)
 
-**Workflow de génération:**
-1. Upload et optimisation de l'image (redimensionnement à 1024x1024)
-2. Appel à l'API Stable Fast 3D avec retry sur plusieurs endpoints
-3. Récupération du modèle GLB
-4. Génération de thumbnail et sauvegarde
+**Workflow de Génération 3D**
 
-**Fallback intelligent:**
-En cas d'échec de l'API, le système génère un modèle 3D de démonstration (cube GLB minimal) pour assurer la continuité du workflow.
+.. mermaid::
 
-**Intégration DfX:**  
-Les modèles 3D générés peuvent être analysés selon les mêmes principes DfX que les images 2D, avec adaptation des métriques pour la 3D.
+   graph TD
+       A[Image 2D source] --> B[Prétraitement]
+       B --> C[Redimensionnement 1024×1024]
+       C --> D[Upload API Stability]
+       D --> E{Endpoint 1}
+       E -->|Échec| F{Endpoint 2}
+       F -->|Échec| G{Endpoint 3}
+       G -->|Échec| H{Endpoint 4}
+       E -->|Succès| I[Modèle GLB]
+       F -->|Succès| I
+       G -->|Succès| I
+       H -->|Succès| I
+       H -->|Échec total| J[Fallback: Cube démo]
+       I --> K[Génération thumbnail]
+       J --> K
+       K --> L[Sauvegarde locale]
+       style I fill:#4CAF50
+       style J fill:#FF9800
 
-Tableau de Synthèse des Modèles
--------------------------------
+**Pipeline Technique Détaillé**
 
-.. list-table::
-   :header-rows: 1
-   :widths: 20 15 15 20 15 15
+1. **Préparation Image**
    
+   * Redimensionnement à 1024×1024 (optimal pour l'API)
+   * Conversion en RGB si nécessaire
+   * Optimisation de la compression
+
+2. **Extraction Géométrique**
+   
+   * Détection de silhouette
+   * Estimation de profondeur
+   * Reconstruction volumétrique
+
+3. **Génération de Mesh**
+   
+   * Triangulation adaptative
+   * Optimisation topologique
+   * Suppression d'artefacts
+
+4. **Projection de Texture**
+   
+   * Unwrapping UV automatique
+   * Projection multi-vues
+   * Génération de normales
+
+5. **Export GLB**
+   
+   * Format glTF 2.0 binaire
+   * Textures embarquées
+   * Métadonnées complètes
+
+**Caractéristiques du GLB Généré**
+
+:Format: glTF 2.0 Binary (.glb)
+:Géométrie: Mesh triangulé optimisé
+:Textures: Diffuse (albedo) + Normal map
+:Matériaux: PBR standard
+:Taille: 5-50 MB (selon complexité)
+:Compatibilité: Three.js, Blender, Unity, Unreal
+
+**Fallback Intelligent**
+
+En cas d'échec total de tous les endpoints, le système génère automatiquement un **modèle 3D de démonstration** (cube GLB minimal) pour assurer la continuité du workflow sans blocage utilisateur.
+
+**Analyse DfX pour Modèles 3D**
+
+Les modèles 3D générés peuvent être analysés selon les mêmes principes DfX que les images 2D, avec adaptations:
+
+* **DFA 3D**: Analyse des intersections et encastrements
+* **DFM 3D**: Vérification des épaisseurs de paroi en volume
+* **DFS 3D**: Évaluation de la démontabilité spatiale
+* **DFSust 3D**: Calcul du volume et estimation de masse
+
+═══════════════════════════════════════
+Tableau Comparatif Synthétique
+═══════════════════════════════════════
+
+.. list-table:: Matrice Complète des Modèles
+   :widths: 15 12 10 20 12 10 21
+   :header-rows: 1
+
    * - Modèle
      - Fournisseur
      - Type
-     - Format/Endpoint
+     - Endpoint
      - Résolution
-     - Usage principal
-   * - SD3 Medium
+     - Vitesse
+     - Usage Principal
+   * - **SD3 Medium**
      - Hugging Face
-     - Texte→Image
-     - stabilityai/stable-diffusion-3-medium-diffusers
+     - T2I
+     - stabilityai/sd-3-medium-diffusers
      - SDXL
-     - Design rapide
-   * - SD3.5 Large
+     - ★★★★☆
+     - Design rapide & itératif
+   * - **SD3.5 Large**
      - Hugging Face
-     - Texte→Image
-     - stabilityai/stable-diffusion-3.5-large
+     - T2I
+     - stabilityai/sd-3.5-large
      - SDXL
-     - Haute fidélité
-   * - SD XL Base
+     - ★★☆☆☆
+     - Rendus haute fidélité
+   * - **SD XL Base**
      - Hugging Face
-     - Texte→Image
-     - stabilityai/stable-diffusion-xl-base-1.0
-     - SDXL
-     - Détails fins
-   * - SD3.5 Turbo
+     - T2I
+     - stabilityai/sd-xl-base-1.0
+     - SDXL multi
+     - ★★★☆☆
+     - Détails fins multi-formats
+   * - **SD3.5 Turbo**
      - Hugging Face
-     - Texte→Image
-     - stabilityai/stable-diffusion-3.5-large-turbo
+     - T2I
+     - stabilityai/sd-3.5-large-turbo
      - SDXL
-     - Itérations rapides
-   * - FLUX.1 Schnell
-     - Hugging Face
-     - Flux→Image
-     - black-forest-labs/FLUX.1-schnell
+     - ★★★★★
+     - Itérations ultra-rapides
+   * - **FLUX.1 Schnell**
+     - Black Forest
+     - Flux2I
+     - FLUX.1-schnell
      - SDXL
+     - ★★★★★
      - Concepts instantanés
-   * - Control Sketch
+   * - **FLUX.1 Dev**
+     - Black Forest
+     - Flux2I
+     - FLUX.1-dev
+     - SDXL
+     - ★★★☆☆
+     - Expérimentation recherche
+   * - **FLUX Kontext**
+     - Black Forest
+     - Flux2I
+     - FLUX.1-Kontext-dev
+     - SDXL
+     - ★★★☆☆
+     - Cohérence contextuelle
+   * - **FLUX Krea**
+     - Black Forest
+     - Flux2I
+     - FLUX.1-Krea-dev
+     - SDXL
+     - ★★★☆☆
+     - Création artistique
+   * - **Control Sketch**
      - Stability AI
-     - Croquis→Image
-     - v2beta/stable-image/control/sketch
-     - SDXL + ControlNet
-     - Transformation croquis
-   * - Control Structure
+     - ControlNet
+     - control/sketch
+     - SDXL+CN
+     - ★★★☆☆
+     - Croquis → Image
+   * - **Control Structure**
      - Stability AI
-     - Structure→Image
-     - v2beta/stable-image/control/structure
-     - SDXL + ControlNet
+     - ControlNet
+     - control/structure
+     - SDXL+CN
+     - ★★★☆☆
      - Raffinement itératif
-   * - Mistral 7B
+   * - **Mistral 7B**
      - Mistral AI
-     - Texte→Texte
-     - API /v1/chat/completions
-     - LLM 7B
+     - LLM
+     - /v1/chat/completions
+     - 7B params
+     - ★★★★★
      - Briefs & traduction
-   * - Mistral Vision
+   * - **Mistral Vision**
      - Mistral AI
-     - Image→Analyse
+     - VLM
      - API Vision
      - Multimodal
+     - ★★★★☆
      - Analyse DfX
-   * - Stable Fast 3D
+   * - **Stable Fast 3D**
      - Stability AI
-     - Image→3D
+     - I23D
      - Multiple endpoints
      - GLB 3D
+     - ★★★☆☆
      - Génération 3D
 
-Architecture d'Intégration
---------------------------
+**Légende Vitesse:**
+   * ★★★★★ : <3 secondes
+   * ★★★★☆ : 3-10 secondes
+   * ★★★☆☆ : 10-20 secondes
+   * ★★☆☆☆ : 20-40 secondes
 
-**Flux de données entre modèles:**
-
-.. mermaid::
-   :caption: Workflow d'intégration des modèles
-
-   graph TD
-       A[Brief utilisateur] --> B[Mistral 7B]
-       B --> C[Prompt enrichi DfX]
-       C --> D{Génération 2D/3D}
-       D --> E[Modèles SD/FLUX]
-       D --> F[Stable Fast 3D]
-       E --> G[Image générée]
-       F --> H[Modèle 3D GLB]
-       G --> I[Mistral Vision]
-       H --> I
-       I --> J[Rapport DfX]
-       J --> K[Recommandations]
-       K --> L[Raffinement]
-       L --> B
-
-**Considérations techniques:**
-
-1. **Traduction automatique:** Tous les prompts sont automatiquement traduits en anglais pour les APIs qui le requièrent
-2. **Fallback multi-niveaux:** Chaque modèle a des mécanismes de fallback pour assurer la disponibilité
-3. **Optimisation des ressources:** Les images sont automatiquement redimensionnées et optimisées avant traitement
-4. **Sauvegarde incrémentale:** Toutes les itérations sont sauvegardées avec métadonnées complètes
-
-**Exigences système:**
-
-- **Mémoire:** Minimum 4GB RAM pour le traitement d'images
-- **Réseau:** Connexion stable pour les appels API
-- **Stockage:** Espace pour les modèles 3D (5-50MB par modèle)
-- **API Keys:** Configuration requise pour Stability AI, Hugging Face, et Mistral AI
-
-Cette architecture modulaire permet de remplacer ou ajouter facilement de nouveaux modèles sans perturber le workflow existant.
 
 Contact & Contribution
 ======================
@@ -651,6 +1149,7 @@ Contact & Contribution
 ----
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
 
 
