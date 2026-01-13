@@ -13,9 +13,10 @@ Ideate Studio - Documentation Technique
 .. centered:: **Plateforme Intelligente de Design Industriel avec Analyse DfX**
 
 .. note::
-   Version 1.0.0 | Dernière mise à jour : Janvier 2025
-   
    Projet d'Expertise - École Nationale Supérieure d'Arts et Métiers (ENSAM)
+   réalisé par : Oussama fahim
+   Encadré par : Mr. tawfik masrour et Mrs. ibtissam el hassani
+  
 
 ----
 
@@ -319,6 +320,7 @@ Contact & Contribution
 ----
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
 
 
