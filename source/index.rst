@@ -22,7 +22,18 @@ Table des matières
 ------------------
 
 - `Introduction <index.html#id1>`_
-
+- `Problématique <index.html#id2>`_
+- `Solution <index.html#id3>`_
+- `Modèles IA utilisés <index.html#id4>`_
+- `Approches Stratégiques de Conception Industrielle Assistée par IA <index.html#id5>`_
+- `Workflows Détaillés - Architectures et Exécution <index.html#id6>`_
+- `Architecture Frontend <index.html#id7>`_
+- `Architecture de Base de Données <index.html#id8>`_
+- `Collaboration pour la Conception <index.html#id9>`_
+- `Onglets de Gestion et d'Assistance <index.html#id10>`_
+- `Résultats <index.html#id11>`_
+- `Améliorations Futures <index.html#id12>`_
+- `Conclusion <index.html#id13>`_
 
 
 Introduction
@@ -249,8 +260,8 @@ Ideate Studio se distingue par :
 5. **Focus industriel** au-delà du design artistique
 
 
-Modèles IA
-================
+Modèles IA utilisés
+===================
 
 Architecture intelligente de 15 modèles d'IA spécialisés orchestrant la génération d'images 2D/3D, l'analyse visuelle avancée et la génération de texte contextuel.
 
@@ -2337,7 +2348,7 @@ Workflow 3: Pipeline de Transformation 3D
      - ⚠️ Conversion
 
 Architecture Frontend
-========================================
+=====================
 
 .. image:: _static/architecture_frontend.png
    :alt: Architecture Frontend - Stack Technologique
@@ -2349,7 +2360,7 @@ L'architecture frontend repose sur une stack technologique moderne conçue pour 
 Les composants serveur modernes réduisent la taille des bundles JavaScript côté client, améliorant les performances globales. L'intégration de Supabase fournit une couche de données en temps réel avec gestion sécurisée de l'authentification. Pour la visualisation, la plateforme utilise des technologies vectorielles et 3D pour des rendus complexes, et intègre des APIs d'intelligence artificielle pour des fonctionnalités avancées de génération de contenu.
 
 Architecture de Base de Données
-========================================
+===============================
 
 .. image:: _static/architecture_bdd.png
    :alt: Architecture Base de Données - PostgreSQL & Supabase
@@ -2361,7 +2372,7 @@ L'architecture de données est construite sur PostgreSQL 15, offrant une base re
 Supabase étend ces capacités avec des services managés incluant la réplication en temps réel via WebSocket, l'authentification multi-fournisseur, et le stockage objet compatible S3. La sécurité est implémentée au niveau des lignes (RLS), permettant des politiques d'accès granulaires. L'architecture supporte la capture des changements de données (CDC) pour des flux de données en temps réel vers les clients connectés.
 
 Collaboration pour la Conception
-========================================
+================================
 
 .. image:: _static/collaboration_conception.png
    :alt: Écosystème de Collaboration pour le Design Industriel
@@ -2373,7 +2384,7 @@ L'écosystème collaboratif est structuré autour de trois piliers interconnect�
 Le module Profil gère l'identité numérique professionnelle, servant de vitrine aux compétences et réalisations. Il intègre des mécanismes de contrôle de visibilité et des métriques d'engagement. Le module Designers forme la plateforme communautaire, facilitant la découverte de talents, le réseautage professionnel et l'inspiration collective à travers le partage de projets publics.
 
 Onglets de Gestion et d'Assistance
-========================================
+==================================
 
 .. image:: _static/onglets_gestion.png
    :alt: Interface de Gestion et d'Assistance Utilisateur
@@ -2386,7 +2397,7 @@ L'onglet Paramètres offre un contrôle granulaire sur la personnalisation de l'
 
 
 Résultats
-========================================
+=========
 
 .. image:: _static/placeholder_1.png
    :alt: Tableau de bord principal avec métriques
@@ -2441,7 +2452,7 @@ Résultats
 La mise en œuvre de cette architecture a permis de délivrer une plateforme opérationnelle complète. Les performances techniques répondent aux objectifs initiaux avec des temps de réponse optimisés et une disponibilité élevée. L'expérience utilisateur a été validée comme intuitive et productive, supportant efficacement les workflows de conception complexes. L'écosystème collaboratif fonctionnel a démontré sa capacité à faciliter les échanges et l'inspiration collective.
 
 Améliorations Futures
-========================================
+=====================
 
 L'évolution de la plateforme s'orientera vers plusieurs axes stratégiques. Le renforcement des capacités d'intelligence artificielle intégrera des modèles spécialisés pour l'analyse sémantique des briefs créatifs et la suggestion automatisée d'améliorations de design. L'expansion des fonctionnalités de réalité augmentée permettra la visualisation de modèles dans des environnements physiques.
 
