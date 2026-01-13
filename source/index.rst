@@ -1063,13 +1063,10 @@ Approches Stratégiques de Conception Industrielle Assistée par IA
    :width: 100%
    :class: workflow-diagram
 
-
----------------------------------------------------
 Approche 1 : Design Rapide avec Pipeline DfX Intégré
 ---------------------------------------------------
 
 🎯 **Objectif Principal**
-^^^^^^^^^^^^^^^^^^^^^^^^
 
 Génération ultra-rapide de concepts pré-évalués pour la phase d’exploration initiale.
 
@@ -1087,7 +1084,6 @@ Génération ultra-rapide de concepts pré-évalués pour la phase d’explorati
      - PNG + Rapport technique complet
 
 🏗️ **Architecture Technique**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: javascript
    :linenos:
@@ -1102,7 +1098,7 @@ Génération ultra-rapide de concepts pré-évalués pour la phase d’explorati
    };
 
 **Points Forts de l’Approche**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 .. admonition:: ⚡ Vitesse d’exécution
    :class: tip
@@ -1120,12 +1116,11 @@ Génération ultra-rapide de concepts pré-évalués pour la phase d’explorati
 
    Scores, alertes et recommandations disponibles instantanément.
 
----------------------------------------------------
 Approche 2 : Design Itératif avec Cycle d’Amélioration
----------------------------------------------------
+------------------------------------------------------
 
 🎯 **Objectif Stratégique**
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 Optimisation progressive par boucles d’amélioration successives pour les designs complexes.
 
@@ -1143,7 +1138,7 @@ Optimisation progressive par boucles d’amélioration successives pour les desi
      - Historique complet versionné
 
 🔄 **Processus Itératif (Description Conceptuelle)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 1. Brief initial (fonctionnel & métier)
 2. Génération de la version V1
@@ -1153,10 +1148,10 @@ Optimisation progressive par boucles d’amélioration successives pour les desi
 6. Finalisation lorsque les objectifs sont atteints
 
 **Fonctionnalités Avancées**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 🎨 Interface Interactive
-""""""""""""""""""""""""
+
 
 Interface optimisée pour le feedback continu et la co-conception :
 
@@ -1176,7 +1171,7 @@ Interface optimisée pour le feedback continu et la co-conception :
    };
 
 📊 Suivi d’Évolution
-""""""""""""""""""""
+
 
 .. list-table::
    :widths: 25 25 25 25
@@ -1200,7 +1195,7 @@ Interface optimisée pour le feedback continu et la co-conception :
      - 1:30
 
 🧠 Intelligence Collective
-"""""""""""""""""""""""""
+
 
 Combinaison structurée de l’analyse algorithmique et de l’expertise humaine :
 
@@ -1217,12 +1212,12 @@ Combinaison structurée de l’analyse algorithmique et de l’expertise humaine
 | des scores           |                          |
 +----------------------+--------------------------+
 
----------------------------------------------------
+
 Approche 3 : Transformation 3D avec Reconstruction IA
 ---------------------------------------------------
 
 🎯 **Objectif Industriel**
-^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 Conversion automatique d’images 2D en modèles 3D exploitables pour la fabrication.
 
@@ -1240,7 +1235,7 @@ Conversion automatique d’images 2D en modèles 3D exploitables pour la fabrica
      - Remeshing automatique
 
 🧠 **Stack Technologique**
-^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 .. list-table::
    :widths: 40 60
@@ -2369,6 +2364,7 @@ Contact & Contribution
 ----
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
 
 
