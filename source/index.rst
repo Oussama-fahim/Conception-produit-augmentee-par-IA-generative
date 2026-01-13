@@ -248,9 +248,7 @@ Ideate Studio se distingue par :
 4. **Open workflow** compatible avec outils existants
 5. **Focus industriel** au-delà du design artistique
 
-----
 
-================
 Modèles IA
 ================
 
@@ -264,9 +262,8 @@ Architecture intelligente de 15 modèles d'IA spécialisés orchestrant la gén�
 .. note::
    Cette documentation décrit l'écosystème complet des modèles IA intégrés à l'application. Chaque modèle est sélectionné pour ses performances optimales dans un cas d'usage spécifique du workflow de design industriel.
 
-═══════════════════════════════════════
 Vue d'Ensemble de l'Architecture
-═══════════════════════════════════════
+--------------------------------
 
 L'application exploite une architecture multi-modèles orchestrée pour offrir un workflow de design industriel complet, de la génération de concepts à l'analyse DfX (Design for X) automatisée.
 
@@ -300,9 +297,8 @@ Statistiques Clés
    * - **Format 3D**
      - GLB/glTF avec textures PBR
 
-═══════════════════════════════════════
 Génération d'Images 2D
-═══════════════════════════════════════
+----------------------
 
 Cette catégorie regroupe 8 modèles de diffusion optimisés pour différents scénarios de génération d'images industrielles.
 
@@ -568,9 +564,9 @@ FLUX.1 Krea Dev
 
 Création artistique poussée et génération de designs innovants sortant des schémas conventionnels.
 
-═══════════════════════════════════════
+
 Contrôle par Croquis (ControlNet)
-═══════════════════════════════════════
+---------------------------------
 
 Les modèles ControlNet permettent un contrôle précis de la génération via des inputs structurels (croquis, contours, structures).
 
@@ -589,17 +585,6 @@ Control Sketch
 :Endpoint: ``v2beta/stable-image/control/sketch``
 :Format: SDXL + ControlNet conditionnel
 :Input: Image croquis (PNG/JPEG)
-
-**Workflow de Transformation**
-
-.. mermaid::
-
-   graph LR
-       A[Croquis manuel] --> B[Extraction contours]
-       B --> C[ControlNet Sketch]
-       C --> D[SDXL conditionné]
-       D --> E[Image détaillée]
-       style C fill:#4CAF50
 
 **Configuration Optimale**
 
@@ -660,18 +645,7 @@ Control Structure
 :Endpoint: ``v2beta/stable-image/control/structure``
 :Usage: Raffinement basé sur feedback
 
-**Workflow Itératif**
 
-.. mermaid::
-
-   graph TD
-       A[Image V1] --> B[Feedback utilisateur]
-       B --> C[Control Structure]
-       C --> D[Image V2 améliorée]
-       D --> E{Satisfait?}
-       E -->|Non| B
-       E -->|Oui| F[Image finale]
-       style C fill:#2196F3
 
 **Cas d'Usage**
 
@@ -687,9 +661,8 @@ Control Structure
 ✓ Conserve les relations spatiales
 ✓ Évite les déformations non-désirées
 
-═══════════════════════════════════════
 Génération et Analyse de Texte
-═══════════════════════════════════════
+------------------------------
 
 Les modèles de langage orchestrent l'intelligence du système, de la génération de prompts à l'analyse technique avancée.
 
@@ -746,19 +719,6 @@ Mistral 7B - Brief Generator
        "top_p": 0.9,
        "frequency_penalty": 0.3     # Évite répétitions
    }
-
-**Workflow de Génération**
-
-.. mermaid::
-
-   graph LR
-       A[Brief FR] --> B[Mistral 7B]
-       B --> C[Traduction EN]
-       B --> D[Enrichissement DfX]
-       C --> E[Prompt optimisé]
-       D --> E
-       E --> F[Génération image]
-       style B fill:#FF9800
 
 **Cas d'Usage**
 
@@ -833,23 +793,6 @@ Design for Sustainability (DFSust)
 
 :Score: 0-100 (100 = très durable)
 
-**Workflow d'Analyse**
-
-.. mermaid::
-
-   graph TD
-       A[Image générée] --> B[Mistral Vision]
-       B --> C[Extraction métriques DFA]
-       B --> D[Extraction métriques DFM]
-       B --> E[Extraction métriques DFS]
-       B --> F[Extraction métriques DFSust]
-       C --> G[Rapport consolidé]
-       D --> G
-       E --> G
-       F --> G
-       G --> H[Recommandations]
-       style B fill:#673AB7
-
 **Format de Sortie**
 
 .. code-block:: json
@@ -877,9 +820,9 @@ Design for Sustainability (DFSust)
 
 L'analyse DfX intervient automatiquement après chaque génération, fournissant un feedback immédiat pour le raffinement itératif.
 
-═══════════════════════════════════════
+
 Génération 3D
-═══════════════════════════════════════
+-------------
 
 Stable Fast 3D
 --------------
@@ -931,29 +874,6 @@ Le système tente automatiquement les endpoints dans l'ordre jusqu'à succès.
    * - target_polycount
      - Auto
      - Nombre de polygones cible (optimisation)
-
-**Workflow de Génération 3D**
-
-.. mermaid::
-
-   graph TD
-       A[Image 2D source] --> B[Prétraitement]
-       B --> C[Redimensionnement 1024×1024]
-       C --> D[Upload API Stability]
-       D --> E{Endpoint 1}
-       E -->|Échec| F{Endpoint 2}
-       F -->|Échec| G{Endpoint 3}
-       G -->|Échec| H{Endpoint 4}
-       E -->|Succès| I[Modèle GLB]
-       F -->|Succès| I
-       G -->|Succès| I
-       H -->|Succès| I
-       H -->|Échec total| J[Fallback: Cube démo]
-       I --> K[Génération thumbnail]
-       J --> K
-       K --> L[Sauvegarde locale]
-       style I fill:#4CAF50
-       style J fill:#FF9800
 
 **Pipeline Technique Détaillé**
 
@@ -1009,9 +929,8 @@ Les modèles 3D générés peuvent être analysés selon les mêmes principes Df
 * **DFS 3D**: Évaluation de la démontabilité spatiale
 * **DFSust 3D**: Calcul du volume et estimation de masse
 
-═══════════════════════════════════════
 Tableau Comparatif Synthétique
-═══════════════════════════════════════
+------------------------------
 
 .. list-table:: Matrice Complète des Modèles
    :widths: 15 12 10 20 12 10 21
@@ -1121,14 +1040,8 @@ Tableau Comparatif Synthétique
    * ★★★★☆ : 3-10 secondes
    * ★★★☆☆ : 10-20 secondes
    * ★★☆☆☆ : 20-40 secondes
-.. Ideate - Documentation Technique documentation master file, created by
-   sphinx-quickstart on Mon Jan 13 2025.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
-.. _ideate-docs:
 
-=================================================================
 Approches Stratégiques de Conception Industrielle Assistée par IA
 =================================================================
 
@@ -1143,6 +1056,13 @@ Approches Stratégiques de Conception Industrielle Assistée par IA
    * - Génération express avec analyse DfX temps réel
      - Raffinement progressif par cycles d'amélioration
      - Conversion IA d'images en modèles 3D optimisés
+
+.. figure:: _static/workflow_design_rapide_detailed.png
+   :alt: Architecture détaillée du workflow Design Rapide
+   :align: center
+   :width: 100%
+   :class: workflow-diagram
+
 
 ---------------------------------------------------
 Approche 1 : Design Rapide avec Pipeline DfX Intégré
@@ -2449,6 +2369,7 @@ Contact & Contribution
 ----
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
 
 
