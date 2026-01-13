@@ -8,14 +8,12 @@ Ideate Studio - Documentation Technique
 .. image:: image/prrr.png
    :alt: Ideate Studio Logo
    :align: center
-   :width: 600px
+   :width: 500px
 
 .. centered:: **Plateforme Intelligente de Design Industriel avec Analyse DfX**
 
 .. note::
    Projet d'Expertise - École Nationale Supérieure d'Arts et Métiers (ENSAM)
-   réalisé par : Oussama fahim
-   Encadré par : Mr. tawfik masrour et Mrs. ibtissam el hassani
   
 
 ----
@@ -320,6 +318,7 @@ Contact & Contribution
 ----
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
 
 
