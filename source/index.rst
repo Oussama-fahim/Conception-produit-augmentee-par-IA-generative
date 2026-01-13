@@ -2362,7 +2362,7 @@ Les composants serveur modernes réduisent la taille des bundles JavaScript côt
 Architecture de Base de Données
 ===============================
 
-.. image:: image/base de donne.png
+.. image:: image/PL.png
    :alt: Architecture Base de Données - PostgreSQL & Supabase
    :align: center
    :width: 80%
@@ -2499,6 +2499,7 @@ La plateforme démontre la faisabilité d'intégrer des composants complexes - i
 
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
 
 
