@@ -6,8 +6,8 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'plagiarism checker'
-copyright = '2025, oussama fahim'
+project = 'projet expertise'
+copyright = '2026, oussama fahim'
 author = 'oussama fahim'
 
 # -- General configuration ---------------------------------------------------
@@ -25,3 +25,4 @@ language = 'fr'
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+
