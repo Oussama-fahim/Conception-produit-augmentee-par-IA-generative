@@ -1128,6 +1128,7 @@ Tableau Comparatif Synthétique
 
 .. _ideate-docs:
 
+=================================================================
 Approches Stratégiques de Conception Industrielle Assistée par IA
 =================================================================
 
@@ -1143,29 +1144,30 @@ Approches Stratégiques de Conception Industrielle Assistée par IA
      - Raffinement progressif par cycles d'amélioration
      - Conversion IA d'images en modèles 3D optimisés
 
+---------------------------------------------------
 Approche 1 : Design Rapide avec Pipeline DfX Intégré
-----------------------------------------------------
+---------------------------------------------------
 
-🎯 Objectif Principal
---------------------
+🎯 **Objectif Principal**
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-Génération **ultra-rapide** de concepts **pré-évalués** pour la phase d’exploration initiale.
+Génération ultra-rapide de concepts pré-évalués pour la phase d’exploration initiale.
 
 .. list-table::
    :widths: 30 70
    :header-rows: 0
 
    * - **Temps moyen**
-     - 45–90 secondes
+     - 45 à 90 secondes
    * - **Complexité**
      - Faible
    * - **Métriques**
-     - Score DfX temps réel
+     - Score DfX en temps réel
    * - **Sorties**
-     - PNG + Rapport complet
+     - PNG + Rapport technique complet
 
-🏗️ Architecture Technique
--------------------------
+🏗️ **Architecture Technique**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: javascript
    :linenos:
@@ -1173,160 +1175,152 @@ Génération **ultra-rapide** de concepts **pré-évalués** pour la phase d’e
    // Pipeline de génération DfX intégré
    const pipelineDesignRapide = {
      phase1: "Brief IA avec Mistral 7B",
-     phase2: "Génération SDXL/ControlNet",
+     phase2: "Génération SDXL / ControlNet",
      phase3: "Analyse DfX automatique",
      phase4: "Recommandations IA",
      phase5: "Export multi-format"
    };
 
-Points Forts de l’Approche
--------------------------
+**Points Forts de l’Approche**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. admonition:: ⚡ Vitesse d’exécution
    :class: tip
 
-   Génération complète en moins de **2 minutes**, analyse DfX incluse.
+   Génération complète en moins de 2 minutes, analyse DfX incluse.
 
 .. admonition:: 🎯 Précision DfX
    :class: note
 
-   Évaluation sur **4 axes** :
-   Assemblage, Fabrication, Service, Durabilité.
+   Évaluation sur quatre axes clés :  
+   Assemblage · Fabrication · Service · Durabilité.
 
 .. admonition:: 🔄 Feedback immédiat
    :class: important
 
-   Scores et recommandations disponibles **instantanément**.
+   Scores, alertes et recommandations disponibles instantanément.
 
-
----
-
+---------------------------------------------------
 Approche 2 : Design Itératif avec Cycle d’Amélioration
-------------------------------------------------------
+---------------------------------------------------
 
-🎯 Objectif Stratégique
-----------------------
+🎯 **Objectif Stratégique**
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Optimisation progressive par **boucles d’amélioration** pour des designs complexes.
+Optimisation progressive par boucles d’amélioration successives pour les designs complexes.
 
 .. list-table::
    :widths: 30 70
    :header-rows: 0
 
    * - **Durée moyenne**
-     - 15–45 minutes
-   * - **Itérations**
+     - 15 à 45 minutes
+   * - **Nombre d’itérations**
      - 3 à 8 cycles
-   * - **Feedback**
+   * - **Sources de feedback**
      - Humain + IA
    * - **Export**
-     - Historique complet
+     - Historique complet versionné
 
-🔄 Processus Itératif
---------------------
+🔄 **Processus Itératif (Description Conceptuelle)**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. mermaid::
+1. Brief initial (fonctionnel & métier)
+2. Génération de la version V1
+3. Évaluation DfX + retour utilisateur
+4. Amélioration guidée par IA
+5. Régénération et réévaluation
+6. Finalisation lorsque les objectifs sont atteints
 
-   graph TD
-     A[Brief Initial] --> B[Génération V1]
-     B --> C{Évaluation}
-     C -->|Satisfait| D[Finalisation]
-     C -->|Amélioration| E[Feedback]
-     E --> F[Régénération]
-     F --> C
+**Fonctionnalités Avancées**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Caractéristiques Avancées
-------------------------
+🎨 Interface Interactive
+""""""""""""""""""""""""
 
-.. tabs::
+Interface optimisée pour le feedback continu et la co-conception :
 
-   .. tab:: 🎨 Interface Interactive
+.. code-block:: javascript
+   :linenos:
+   :emphasize-lines: 5-8
 
-      Interface optimisée pour le **feedback continu**.
+   const IterativeInterface = () => {
+     const [feedback, setFeedback] = useState("");
+     const [iterations, setIterations] = useState([]);
 
-      .. code-block:: javascript
-         :linenos:
-         :emphasize-lines: 6-11
+     // Système de feedback en temps réel
+     const handleFeedback = async (feedbackText) => {
+       const refined = await api.refineWithAI(feedbackText);
+       return refined;
+     };
+   };
 
-         const IterativeInterface = () => {
-           const [feedback, setFeedback] = useState("");
-           const [iterations, setIterations] = useState([]);
+📊 Suivi d’Évolution
+""""""""""""""""""""
 
-           // Feedback IA en temps réel
-           const handleFeedback = async (feedbackText) => {
-             const refined = await api.refineWithAI(feedbackText);
-             return refined;
-           };
-         };
+.. list-table::
+   :widths: 25 25 25 25
+   :header-rows: 1
 
-   .. tab:: 📊 Suivi d’Évolution
+   * - Itération
+     - Score DfX
+     - Amélioration
+     - Temps
+   * - #1
+     - 0.65
+     - Base
+     - 2:15
+   * - #2
+     - 0.78
+     - +13 %
+     - 1:45
+   * - #3
+     - 0.89
+     - +11 %
+     - 1:30
 
-      Monitoring détaillé des améliorations successives.
+🧠 Intelligence Collective
+"""""""""""""""""""""""""
 
-      .. list-table::
-         :widths: 25 25 25 25
-         :header-rows: 1
+Combinaison structurée de l’analyse algorithmique et de l’expertise humaine :
 
-         * - Itération
-           - Score DfX
-           - Amélioration
-           - Temps
-         * - #1
-           - 0.65
-           - Base
-           - 2:15
-         * - #2
-           - 0.78
-           - +13 %
-           - 1:45
-         * - #3
-           - 0.89
-           - +11 %
-           - 1:30
++----------------------+--------------------------+
+| **Analyse IA**       | **Expertise Humaine**    |
++======================+==========================+
+| Reconnaissance       | Contexte métier          |
+| des patterns         |                          |
++----------------------+--------------------------+
+| Optimisation         | Ergonomie ressentie      |
+| paramétrique         |                          |
++----------------------+--------------------------+
+| Prédiction           | Critères esthétiques     |
+| des scores           |                          |
++----------------------+--------------------------+
 
-   .. tab:: 🧠 Intelligence Collective
-
-      Synergie **Analyse IA + Expertise humaine**.
-
-      .. list-table::
-         :widths: 50 50
-         :header-rows: 1
-
-         * - Analyse IA
-           - Expertise Humaine
-         * - Reconnaissance des patterns
-           - Contexte métier
-         * - Optimisation paramétrique
-           - Ergonomie ressentie
-         * - Prédiction des scores
-           - Critères esthétiques
-
-
----
-
+---------------------------------------------------
 Approche 3 : Transformation 3D avec Reconstruction IA
------------------------------------------------------
+---------------------------------------------------
 
-🎯 Objectif Industriel
----------------------
+🎯 **Objectif Industriel**
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Conversion automatique d’images **2D** en **modèles 3D manufacturables**.
+Conversion automatique d’images 2D en modèles 3D exploitables pour la fabrication.
 
 .. list-table::
    :widths: 30 70
    :header-rows: 0
 
-   * - **Reconstruction**
+   * - **Moteur de reconstruction**
      - Stable Fast 3D
-   * - **Précision**
-     - ±2 % dimensions
-   * - **Formats**
-     - GLB, OBJ, STL
+   * - **Précision dimensionnelle**
+     - ± 2 %
+   * - **Formats supportés**
+     - GLB · OBJ · STL
    * - **Optimisation**
-     - Auto-remeshing
+     - Remeshing automatique
 
-🧠 Stack Technologique
----------------------
+🧠 **Stack Technologique**
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 40 60
@@ -1340,47 +1334,8 @@ Conversion automatique d’images **2D** en **modèles 3D manufacturables**.
      - SAM (Segment Anything)
    * - Texturing
      - Neural Textures
-   * - Optimisation
+   * - Optimisation maillage
      - MeshLab + Blender
-
-
-Comparaison Stratégique des Approches
--------------------------------------
-
-.. list-table:: Matrice de sélection d'approche
-   :widths: 20 30 25 25
-   :header-rows: 1
-   :class: comparison-table
-   :name: table-approaches-comparison
-
-   * - **Critère**
-     - **Design Rapide ⚡**
-     - **Design Itératif 🔄**
-     - **Transformation 3D 🧊**
-   * - Temps d'exécution
-     - 1-3 min
-     - 15-45 min
-     - 3-10 min
-   * - Complexité
-     - Faible
-     - Moyenne à Élevée
-     - Moyenne
-   * - Interaction IA
-     - Automatique
-     - Guidée + Automatique
-     - Automatique
-   * - Sorties
-     - PNG + DfX
-     - Suite PNG + Évolution
-     - GLB/OBJ/STL
-   * - Meilleur usage
-     - Exploration
-     - Raffinement
-     - Prototypage
-   * - Expertise requise
-     - Débutant
-     - Intermédiaire
-     - Technique
 
 
 Workflows Détaillés - Architectures et Exécution
@@ -2494,6 +2449,7 @@ Contact & Contribution
 ----
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
 
 
