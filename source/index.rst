@@ -1278,7 +1278,7 @@ Workflow 1: Pipeline de Design Rapide avec DfX
    :width: 100%
    :class: workflow-diagram
 
-   *Figure 2.1 : Architecture technique du pipeline Design Rapide*
+   * Architecture technique du pipeline Design Rapide*
 
 Étape 1: Génération de Brief Intelligent
 -----------------------------------------
@@ -1663,7 +1663,7 @@ Workflow 2: Processus Itératif d'Optimisation
    :width: 100%
    :class: workflow-diagram
 
-   *Figure 2.2 : Architecture du processus itératif en 5 phases*
+   *Architecture du processus itératif*
 
 Phase 1: Initialisation du Projet
 ----------------------------------
@@ -1956,7 +1956,7 @@ Workflow 3: Pipeline de Transformation 3D
    :width: 100%
    :class: workflow-diagram
 
-   *Figure 2.3 : Architecture complète du pipeline de transformation 3D*
+   *Architecture complète du pipeline de transformation 3D*
 
 Étape 1: Prétraitement d'Image Avancé
 --------------------------------------
@@ -2399,55 +2399,85 @@ L'onglet Paramètres offre un contrôle granulaire sur la personnalisation de l'
 Résultats
 =========
 
-.. image:: image/PR1.png
-   :alt: Tableau de bord principal avec métriques
+.. figure:: image/PR1.png
+   :alt: login 
    :align: center
-   :width: 45%
+   :width: 100%
+   :class: workflow-diagram
 
-.. image:: image/PR2.png
-   :alt: Interface d'édition de projet avec outils IA
-   :align: center
-   :width: 45%
+   *Mise en oeuvre la sécurité*
 
-.. image:: image/PR3.png
-   :alt: Visualisation 3D interactive d'un design industriel
+.. figure:: image/PR2.png
+   :alt: TABLEAU DE BORD
    :align: center
-   :width: 45%
+   :width: 100%
+   :class: workflow-diagram
 
-.. image:: image/PR4.png
-   :alt: Fenêtre de collaboration en temps réel avec chat
-   :align: center
-   :width: 45%
+   *Tableau de bort de l'application*
 
-.. image:: image/PR5.png
-   :alt: Galerie communautaire avec filtres de recherche
+.. figure:: image/PR3.png
+   :alt: l'onglet designers pour voir les projets publics
    :align: center
-   :width: 45%
+   :width: 100%
+   :class: workflow-diagram
 
-.. image:: image/PR6.png
-   :alt: Analyse de performance d'un projet avec graphiques
-   :align: center
-   :width: 45%
+   *l'onglet designers pour voir les projets publics*
 
-.. image:: image/PR7.png
-   :alt: Historique des versions avec comparaison visuelle
+.. figure:: image/PR4.png
+   :alt: Onglet design rapide pour créer un design
    :align: center
-   :width: 45%
+   :width: 100%
+   :class: workflow-diagram
 
-.. image:: image/PR8.png
-   :alt: Menu d'export avec prévisualisation multi-formats
-   :align: center
-   :width: 45%
+   *Onglet design rapide pour créer un design*
 
-.. image:: image/PR9.png
-   :alt: Interface d'administration avec statistiques système
+.. figure:: image/PR5.png
+   :alt: Exemple d'un design rapide
    :align: center
-   :width: 45%
+   :width: 100%
+   :class: workflow-diagram
 
-.. image:: image/PR10.png
-   :alt: Version mobile responsive de la plateforme
+   *Exemple d'un design rapide*
+
+.. figure:: image/PR6.png
+   :alt: Exemple de feedback dans design itérative
    :align: center
-   :width: 45%
+   :width: 100%
+   :class: workflow-diagram
+
+   *Exemple de feedback dans design itérative*
+
+.. figure:: image/PR7.png
+   :alt: aider l'utilisateur par questions answwers
+   :align: center
+   :width: 100%
+   :class: workflow-diagram
+
+   *Onglet Aide pour aider utilisater par des quetions réponses sur le fonctionnement*
+
+.. figure:: image/PR8.png
+   :alt: à propos
+   :align: center
+   :width: 100%
+   :class: workflow-diagram
+
+   *A propos de l'application *
+
+.. figure:: image/PR9.png
+   :alt: Paramètres de l'application
+   :align: center
+   :width: 100%
+   :class: workflow-diagram
+
+   *onglet de Paramètres de l'application*
+
+.. figure:: image/PR10.png
+   :alt: 
+   :align: center
+   :width: 100%
+   :class: workflow-diagram
+
+   *Onglet profil pour modifier les informations personnelles*
 
 La mise en œuvre de cette architecture a permis de délivrer une plateforme opérationnelle complète. Les performances techniques répondent aux objectifs initiaux avec des temps de réponse optimisés et une disponibilité élevée. L'expérience utilisateur a été validée comme intuitive et productive, supportant efficacement les workflows de conception complexes. L'écosystème collaboratif fonctionnel a démontré sa capacité à faciliter les échanges et l'inspiration collective.
 
@@ -2469,6 +2499,7 @@ La plateforme démontre la faisabilité d'intégrer des composants complexes - i
 
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
 
 
