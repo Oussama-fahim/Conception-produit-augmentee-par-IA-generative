@@ -18,15 +18,12 @@ Ideate design Studio - Documentation Technique
 
 ----
 
-Table des Matières
-==================
+Table des matières
+------------------
 
-.. contents:: 
-   :depth: 3
-   :local:
-   :backlinks: top
+- `Introduction <index.html#id1>`_
 
-----
+
 
 Introduction
 ============
@@ -279,5 +276,6 @@ Contact & Contribution
 ----
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
 
