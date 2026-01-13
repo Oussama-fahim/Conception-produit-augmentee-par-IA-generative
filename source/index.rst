@@ -1129,7 +1129,7 @@ Tableau Comparatif Synthétique
 .. _ideate-docs:
 
 Approches Stratégiques de Conception Industrielle Assistée par IA
-==========================================================================
+=================================================================
 
 .. list-table::
    :widths: 33 33 33
@@ -1143,150 +1143,130 @@ Approches Stratégiques de Conception Industrielle Assistée par IA
      - Raffinement progressif par cycles d'amélioration
      - Conversion IA d'images en modèles 3D optimisés
 
-Approche 1: Design Rapide avec Pipeline DfX Intégré
----------------------------------------------------
+Approche 1 : Design Rapide avec Pipeline DfX Intégré
+----------------------------------------------------
 
-.. grid:: 2
-   :gutter: 3
+🎯 Objectif Principal
+--------------------
 
-   .. grid-item-card::
-      :class-header: bg-primary
-      :link: #workflow-design-rapide
-      :link-type: ref
+Génération **ultra-rapide** de concepts **pré-évalués** pour la phase d’exploration initiale.
 
-      **🎯 Objectif Principal**
-      ^^^^^^^^^^^^^^^^^^^^^^^^^
+.. list-table::
+   :widths: 30 70
+   :header-rows: 0
 
-      Génération ultra-rapide de concepts pré-évalués pour la phase d'exploration initiale
+   * - **Temps moyen**
+     - 45–90 secondes
+   * - **Complexité**
+     - Faible
+   * - **Métriques**
+     - Score DfX temps réel
+   * - **Sorties**
+     - PNG + Rapport complet
 
-      .. list-table::
-         :widths: 30 70
-         :header-rows: 0
+🏗️ Architecture Technique
+-------------------------
 
-         * - **Temps moyen**
-           - 45-90 secondes
-         * - **Complexité**
-           - Faible
-         * - **Métriques**
-           - Score DfX temps réel
-         * - **Sorties**
-           - PNG + Rapport complet
+.. code-block:: javascript
+   :linenos:
 
-   .. grid-item-card::
-      :class-header: bg-secondary
-      :link: #architecture-technique
-      :link-type: ref
+   // Pipeline de génération DfX intégré
+   const pipelineDesignRapide = {
+     phase1: "Brief IA avec Mistral 7B",
+     phase2: "Génération SDXL/ControlNet",
+     phase3: "Analyse DfX automatique",
+     phase4: "Recommandations IA",
+     phase5: "Export multi-format"
+   };
 
-      **🏗️ Architecture Technique**
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Points Forts de l’Approche
+-------------------------
 
-      .. code-block:: javascript
-         :linenos:
-
-         // Pipeline de génération DfX intégré
-         const pipelineDesignRapide = {
-           phase1: "Brief IA avec Mistral 7B",
-           phase2: "Génération SDXL/ControlNet",
-           phase3: "Analyse DfX automatique",
-           phase4: "Recommandations IA",
-           phase5: "Export multi-format"
-         };
-
-**Points Forts de l'Approche**
-
-.. admonition:: ⚡ Vitesse d'exécution
+.. admonition:: ⚡ Vitesse d’exécution
    :class: tip
-   
-   Génération complète en moins de 2 minutes avec analyse DfX incluse
+
+   Génération complète en moins de **2 minutes**, analyse DfX incluse.
 
 .. admonition:: 🎯 Précision DfX
    :class: note
-   
-   Évaluation sur 4 aspects : Assemblage, Fabrication, Service, Durabilité
+
+   Évaluation sur **4 axes** :
+   Assemblage, Fabrication, Service, Durabilité.
 
 .. admonition:: 🔄 Feedback immédiat
    :class: important
-   
-   Scores et recommandations disponibles instantanément
 
-Approche 2: Design Itératif avec Cycle d'Amélioration
------------------------------------------------------
+   Scores et recommandations disponibles **instantanément**.
 
-.. grid:: 2
-   :gutter: 3
 
-   .. grid-item-card::
-      :class-header: bg-success
-      :link: #workflow-iteratif
-      :link-type: ref
+---
 
-      **🎯 Objectif Stratégique**
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Approche 2 : Design Itératif avec Cycle d’Amélioration
+------------------------------------------------------
 
-      Optimisation progressive par boucles d'amélioration pour designs complexes
+🎯 Objectif Stratégique
+----------------------
 
-      .. list-table::
-         :widths: 30 70
-         :header-rows: 0
+Optimisation progressive par **boucles d’amélioration** pour des designs complexes.
 
-         * - **Durée moyenne**
-           - 15-45 minutes
-         * - **Itérations**
-           - 3-8 cycles
-         * - **Feedback**
-           - Humain + IA
-         * - **Export**
-           - Historique complet
+.. list-table::
+   :widths: 30 70
+   :header-rows: 0
 
-   .. grid-item-card::
-      :class-header: bg-warning
-      :link: #workflow-iteratif-detail
-      :link-type: ref
+   * - **Durée moyenne**
+     - 15–45 minutes
+   * - **Itérations**
+     - 3 à 8 cycles
+   * - **Feedback**
+     - Humain + IA
+   * - **Export**
+     - Historique complet
 
-      **🔄 Processus Itératif**
-      ^^^^^^^^^^^^^^^^^^^^^^^^^
+🔄 Processus Itératif
+--------------------
 
-      .. mermaid::
-         
-         graph TD
-           A[Brief Initial] --> B[Génération V1]
-           B --> C{Évaluation}
-           C -->|Satisfait| D[Finalisation]
-           C -->|Amélioration| E[Feedback]
-           E --> F[Régénération]
-           F --> C
+.. mermaid::
 
-**Caractéristiques Avancées**
+   graph TD
+     A[Brief Initial] --> B[Génération V1]
+     B --> C{Évaluation}
+     C -->|Satisfait| D[Finalisation]
+     C -->|Amélioration| E[Feedback]
+     E --> F[Régénération]
+     F --> C
+
+Caractéristiques Avancées
+------------------------
 
 .. tabs::
 
    .. tab:: 🎨 Interface Interactive
 
-      Interface optimisée pour le feedback continu :
-      
+      Interface optimisée pour le **feedback continu**.
+
       .. code-block:: javascript
          :linenos:
-         :emphasize-lines: 5-8
+         :emphasize-lines: 6-11
 
          const IterativeInterface = () => {
            const [feedback, setFeedback] = useState("");
            const [iterations, setIterations] = useState([]);
-           
-           // Système de feedback en temps réel
+
+           // Feedback IA en temps réel
            const handleFeedback = async (feedbackText) => {
              const refined = await api.refineWithAI(feedbackText);
              return refined;
            };
          };
 
-   .. tab:: 📊 Suivi d'Évolution
+   .. tab:: 📊 Suivi d’Évolution
 
-      Monitoring détaillé des améliorations :
-      
+      Monitoring détaillé des améliorations successives.
+
       .. list-table::
          :widths: 25 25 25 25
          :header-rows: 1
-         
+
          * - Itération
            - Score DfX
            - Amélioration
@@ -1297,129 +1277,75 @@ Approche 2: Design Itératif avec Cycle d'Amélioration
            - 2:15
          * - #2
            - 0.78
-           - +13%
+           - +13 %
            - 1:45
          * - #3
            - 0.89
-           - +11%
+           - +11 %
            - 1:30
 
    .. tab:: 🧠 Intelligence Collective
 
-      Combinaison feedback humain + analyse IA :
-
-+----------------------+--------------------------+
-| **Analyse IA**       | **Expertise Humaine**    |
-+======================+==========================+
-| Reconnaissance       | Contexte métier          |
-| des patterns         |                          |
-+----------------------+--------------------------+
-| Optimisation         | Ergonomie ressentie      |
-| paramétrique         |                          |
-+----------------------+--------------------------+
-| Prédiction           | Critères esthétiques     |
-| des scores           |                          |
-+----------------------+--------------------------+
-
-
-Approche 3: Transformation 3D avec Reconstruction IA
-----------------------------------------------------
-
-.. grid:: 2
-   :gutter: 3
-
-   .. grid-item-card::
-      :class-header: bg-info
-      :link: #workflow-3d
-      :link-type: ref
-
-      **🎯 Objectif Industriel**
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-      Conversion automatique d'images 2D en modèles 3D manufacturables
+      Synergie **Analyse IA + Expertise humaine**.
 
       .. list-table::
-         :widths: 30 70
-         :header-rows: 0
-
-         * - **Reconstruction**
-           - Stable Fast 3D
-         * - **Précision**
-           - ±2% dimensions
-         * - **Formats**
-           - GLB, OBJ, STL
-         * - **Optimisation**
-           - Auto-remeshing
-
-   .. grid-item-card::
-      :class-header: bg-danger
-      :link: #tech-stack-3d
-      :link-type: ref
-
-      **🧠 Stack Technologique**
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-      .. list-table::
-         :widths: 40 60
+         :widths: 50 50
          :header-rows: 1
-         
-         * - Composant
-           - Technologie
-         * - Reconstruction 3D
-           - Stability AI Fast3D
-         * - Segmentation
-           - SAM (Segment Anything)
-         * - Texturing
-           - Neural Textures
-         * - Optimisation
-           - MeshLab + Blender
 
-**Pipeline de Reconstruction 3D**
+         * - Analyse IA
+           - Expertise Humaine
+         * - Reconnaissance des patterns
+           - Contexte métier
+         * - Optimisation paramétrique
+           - Ergonomie ressentie
+         * - Prédiction des scores
+           - Critères esthétiques
 
-.. raw:: html
 
-   <div class="pipeline-3d">
-     <div class="pipeline-step">
-       <div class="step-number">1</div>
-       <h4>Segmentation</h4>
-       <p>Isolation de l'objet principal</p>
-     </div>
-     <div class="pipeline-arrow">→</div>
-     <div class="pipeline-step">
-       <div class="step-number">2</div>
-       <h4>Estimation Profondeur</h4>
-       <p>Map de profondeur avec MiDaS</p>
-     </div>
-     <div class="pipeline-arrow">→</div>
-     <div class="pipeline-step">
-       <div class="step-number">3</div>
-       <h4>Reconstruction</h4>
-       <p>Génération du mesh 3D</p>
-     </div>
-     <div class="pipeline-arrow">→</div>
-     <div class="pipeline-step">
-       <div class="step-number">4</div>
-       <h4>Texturing</h4>
-       <p>Projection des textures</p>
-     </div>
-     <div class="pipeline-arrow">→</div>
-     <div class="pipeline-step">
-       <div class="step-number">5</div>
-       <h4>Optimisation</h4>
-       <p>Réduction polygones + UV mapping</p>
-     </div>
-   </div>
+---
 
-.. figure:: _static/3d_pipeline_diagram.png
-   :alt: Diagramme du pipeline 3D complet
-   :align: center
-   :width: 100%
-   :class: shadow-lg rounded-3
+Approche 3 : Transformation 3D avec Reconstruction IA
+-----------------------------------------------------
 
-   *Figure 1.2 : Architecture du pipeline de transformation 3D automatisé*
+🎯 Objectif Industriel
+---------------------
+
+Conversion automatique d’images **2D** en **modèles 3D manufacturables**.
+
+.. list-table::
+   :widths: 30 70
+   :header-rows: 0
+
+   * - **Reconstruction**
+     - Stable Fast 3D
+   * - **Précision**
+     - ±2 % dimensions
+   * - **Formats**
+     - GLB, OBJ, STL
+   * - **Optimisation**
+     - Auto-remeshing
+
+🧠 Stack Technologique
+---------------------
+
+.. list-table::
+   :widths: 40 60
+   :header-rows: 1
+
+   * - Composant
+     - Technologie
+   * - Reconstruction 3D
+     - Stability AI Fast3D
+   * - Segmentation
+     - SAM (Segment Anything)
+   * - Texturing
+     - Neural Textures
+   * - Optimisation
+     - MeshLab + Blender
+
 
 Comparaison Stratégique des Approches
-======================================
+-------------------------------------
 
 .. list-table:: Matrice de sélection d'approche
    :widths: 20 30 25 25
@@ -1456,7 +1382,7 @@ Comparaison Stratégique des Approches
      - Intermédiaire
      - Technique
 
-==========================================================================
+
 Workflows Détaillés - Architectures et Exécution
 ================================================
 
@@ -2568,6 +2494,7 @@ Contact & Contribution
 ----
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
 
 
