@@ -1128,34 +1128,23 @@ Tableau Comparatif Synthétique
 
 .. _ideate-docs:
 
-
-
-==========================================================================
 Approches Stratégiques de Conception Industrielle Assistée par IA
 ==========================================================================
 
-.. raw:: html
+.. list-table::
+   :widths: 33 33 33
+   :header-rows: 0
+   :class: feature-grid
 
-   <div class="feature-grid">
-     <div class="feature-card">
-       <div class="feature-icon">⚡</div>
-       <h3>Design Rapide</h3>
-       <p>Génération express avec analyse DfX temps réel</p>
-     </div>
-     <div class="feature-card">
-       <div class="feature-icon">🔄</div>
-       <h3>Design Itératif</h3>
-       <p>Raffinement progressif par cycles d'amélioration</p>
-     </div>
-     <div class="feature-card">
-       <div class="feature-icon">🧊</div>
-       <h3>Transformation 3D</h3>
-       <p>Conversion IA d'images en modèles 3D optimisés</p>
-     </div>
-   </div>
+   * - ⚡ **Design Rapide**
+     - 🔄 **Design Itératif**
+     - 🧊 **Transformation 3D**
+   * - Génération express avec analyse DfX temps réel
+     - Raffinement progressif par cycles d'amélioration
+     - Conversion IA d'images en modèles 3D optimisés
 
 Approche 1: Design Rapide avec Pipeline DfX Intégré
-====================================================
+---------------------------------------------------
 
 .. grid:: 2
    :gutter: 3
@@ -1221,7 +1210,7 @@ Approche 1: Design Rapide avec Pipeline DfX Intégré
    Scores et recommandations disponibles instantanément
 
 Approche 2: Design Itératif avec Cycle d'Amélioration
-======================================================
+-----------------------------------------------------
 
 .. grid:: 2
    :gutter: 3
@@ -1319,29 +1308,22 @@ Approche 2: Design Itératif avec Cycle d'Amélioration
 
       Combinaison feedback humain + analyse IA :
 
-      .. raw:: html
++----------------------+--------------------------+
+| **Analyse IA**       | **Expertise Humaine**    |
++======================+==========================+
+| Reconnaissance       | Contexte métier          |
+| des patterns         |                          |
++----------------------+--------------------------+
+| Optimisation         | Ergonomie ressentie      |
+| paramétrique         |                          |
++----------------------+--------------------------+
+| Prédiction           | Critères esthétiques     |
+| des scores           |                          |
++----------------------+--------------------------+
 
-         <div class="ai-human-collab">
-           <div class="ai-side">
-             <h4>Analyse IA</h4>
-             <ul>
-               <li>Reconnaissance des patterns</li>
-               <li>Optimisation paramétrique</li>
-               <li>Prédiction des scores</li>
-             </ul>
-           </div>
-           <div class="human-side">
-             <h4>Expertise Humaine</h4>
-             <ul>
-               <li>Contexte métier</li>
-               <li>Érgonomie ressentie</li>
-               <li>Critères esthétiques</li>
-             </ul>
-           </div>
-         </div>
 
 Approche 3: Transformation 3D avec Reconstruction IA
-=====================================================
+----------------------------------------------------
 
 .. grid:: 2
    :gutter: 3
@@ -1476,12 +1458,12 @@ Comparaison Stratégique des Approches
 
 ==========================================================================
 Workflows Détaillés - Architectures et Exécution
-==========================================================================
+================================================
 
 .. _workflow-design-rapide:
 
 Workflow 1: Pipeline de Design Rapide avec DfX
-===============================================
+----------------------------------------------
 
 .. figure:: _static/workflow_design_rapide_detailed.png
    :alt: Architecture détaillée du workflow Design Rapide
@@ -2159,7 +2141,7 @@ Phase 5: Génération de Rapport Final
 .. _workflow-3d-detailed:
 
 Workflow 3: Pipeline de Transformation 3D
-==========================================
+----------------------------------------
 
 .. figure:: _static/workflow_3d_detailed.png
    :alt: Architecture détaillée du pipeline 3D
@@ -2558,19 +2540,6 @@ Workflow 3: Pipeline de Transformation 3D
      - ⚠️ Plugin
      - ⚠️ Conversion
 
-.. raw:: html
-
-   <div class="success-banner">
-     <h3>🎉 Documentation en Construction</h3>
-     <p>Les sections suivantes sont en cours de rédaction :</p>
-     <ul>
-       <li>Frontend Architecture</li>
-       <li>Base de Données Supabase</li>
-       <li>Système de Projets et Profils</li>
-       <li>Approche Collaborative</li>
-       <li>Résultats et Métriques</li>
-     </ul>
-   </div>
 
 
 Contact & Contribution
@@ -2599,6 +2568,7 @@ Contact & Contribution
 ----
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
 
 
