@@ -2399,52 +2399,52 @@ L'onglet Paramètres offre un contrôle granulaire sur la personnalisation de l'
 Résultats
 =========
 
-.. image:: _static/placeholder_1.png
+.. image:: image/PR1.png
    :alt: Tableau de bord principal avec métriques
    :align: center
    :width: 45%
 
-.. image:: _static/placeholder_2.png
+.. image:: image/PR2.png
    :alt: Interface d'édition de projet avec outils IA
    :align: center
    :width: 45%
 
-.. image:: _static/placeholder_3.png
+.. image:: image/PR3.png
    :alt: Visualisation 3D interactive d'un design industriel
    :align: center
    :width: 45%
 
-.. image:: _static/placeholder_4.png
+.. image:: image/PR4.png
    :alt: Fenêtre de collaboration en temps réel avec chat
    :align: center
    :width: 45%
 
-.. image:: _static/placeholder_5.png
+.. image:: image/PR5.png
    :alt: Galerie communautaire avec filtres de recherche
    :align: center
    :width: 45%
 
-.. image:: _static/placeholder_6.png
+.. image:: image/PR6.png
    :alt: Analyse de performance d'un projet avec graphiques
    :align: center
    :width: 45%
 
-.. image:: _static/placeholder_7.png
+.. image:: image/PR7.png
    :alt: Historique des versions avec comparaison visuelle
    :align: center
    :width: 45%
 
-.. image:: _static/placeholder_8.png
+.. image:: image/PR8.png
    :alt: Menu d'export avec prévisualisation multi-formats
    :align: center
    :width: 45%
 
-.. image:: _static/placeholder_9.png
+.. image:: image/PR9.png
    :alt: Interface d'administration avec statistiques système
    :align: center
    :width: 45%
 
-.. image:: _static/placeholder_10.png
+.. image:: image/PR10.png
    :alt: Version mobile responsive de la plateforme
    :align: center
    :width: 45%
@@ -2469,6 +2469,7 @@ La plateforme démontre la faisabilité d'intégrer des composants complexes - i
 
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
 
 
