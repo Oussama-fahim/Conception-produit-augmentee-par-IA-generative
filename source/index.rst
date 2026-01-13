@@ -1126,515 +1126,1451 @@ Tableau Comparatif Synthétique
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Ideate - Plateforme de Conception Industrielle Assistée par IA
-===============================================================
+.. _ideate-docs:
 
-.. image:: _static/logo_ideate.png
-   :alt: Logo Ideate
+
+
+==========================================================================
+Approches Stratégiques de Conception Industrielle Assistée par IA
+==========================================================================
+
+.. raw:: html
+
+   <div class="feature-grid">
+     <div class="feature-card">
+       <div class="feature-icon">⚡</div>
+       <h3>Design Rapide</h3>
+       <p>Génération express avec analyse DfX temps réel</p>
+     </div>
+     <div class="feature-card">
+       <div class="feature-icon">🔄</div>
+       <h3>Design Itératif</h3>
+       <p>Raffinement progressif par cycles d'amélioration</p>
+     </div>
+     <div class="feature-card">
+       <div class="feature-icon">🧊</div>
+       <h3>Transformation 3D</h3>
+       <p>Conversion IA d'images en modèles 3D optimisés</p>
+     </div>
+   </div>
+
+Approche 1: Design Rapide avec Pipeline DfX Intégré
+====================================================
+
+.. grid:: 2
+   :gutter: 3
+
+   .. grid-item-card::
+      :class-header: bg-primary
+      :link: #workflow-design-rapide
+      :link-type: ref
+
+      **🎯 Objectif Principal**
+      ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      Génération ultra-rapide de concepts pré-évalués pour la phase d'exploration initiale
+
+      .. list-table::
+         :widths: 30 70
+         :header-rows: 0
+
+         * - **Temps moyen**
+           - 45-90 secondes
+         * - **Complexité**
+           - Faible
+         * - **Métriques**
+           - Score DfX temps réel
+         * - **Sorties**
+           - PNG + Rapport complet
+
+   .. grid-item-card::
+      :class-header: bg-secondary
+      :link: #architecture-technique
+      :link-type: ref
+
+      **🏗️ Architecture Technique**
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      .. code-block:: javascript
+         :linenos:
+
+         // Pipeline de génération DfX intégré
+         const pipelineDesignRapide = {
+           phase1: "Brief IA avec Mistral 7B",
+           phase2: "Génération SDXL/ControlNet",
+           phase3: "Analyse DfX automatique",
+           phase4: "Recommandations IA",
+           phase5: "Export multi-format"
+         };
+
+**Points Forts de l'Approche**
+
+.. admonition:: ⚡ Vitesse d'exécution
+   :class: tip
+   
+   Génération complète en moins de 2 minutes avec analyse DfX incluse
+
+.. admonition:: 🎯 Précision DfX
+   :class: note
+   
+   Évaluation sur 4 aspects : Assemblage, Fabrication, Service, Durabilité
+
+.. admonition:: 🔄 Feedback immédiat
+   :class: important
+   
+   Scores et recommandations disponibles instantanément
+
+Approche 2: Design Itératif avec Cycle d'Amélioration
+======================================================
+
+.. grid:: 2
+   :gutter: 3
+
+   .. grid-item-card::
+      :class-header: bg-success
+      :link: #workflow-iteratif
+      :link-type: ref
+
+      **🎯 Objectif Stratégique**
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      Optimisation progressive par boucles d'amélioration pour designs complexes
+
+      .. list-table::
+         :widths: 30 70
+         :header-rows: 0
+
+         * - **Durée moyenne**
+           - 15-45 minutes
+         * - **Itérations**
+           - 3-8 cycles
+         * - **Feedback**
+           - Humain + IA
+         * - **Export**
+           - Historique complet
+
+   .. grid-item-card::
+      :class-header: bg-warning
+      :link: #workflow-iteratif-detail
+      :link-type: ref
+
+      **🔄 Processus Itératif**
+      ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      .. mermaid::
+         
+         graph TD
+           A[Brief Initial] --> B[Génération V1]
+           B --> C{Évaluation}
+           C -->|Satisfait| D[Finalisation]
+           C -->|Amélioration| E[Feedback]
+           E --> F[Régénération]
+           F --> C
+
+**Caractéristiques Avancées**
+
+.. tabs::
+
+   .. tab:: 🎨 Interface Interactive
+
+      Interface optimisée pour le feedback continu :
+      
+      .. code-block:: javascript
+         :linenos:
+         :emphasize-lines: 5-8
+
+         const IterativeInterface = () => {
+           const [feedback, setFeedback] = useState("");
+           const [iterations, setIterations] = useState([]);
+           
+           // Système de feedback en temps réel
+           const handleFeedback = async (feedbackText) => {
+             const refined = await api.refineWithAI(feedbackText);
+             return refined;
+           };
+         };
+
+   .. tab:: 📊 Suivi d'Évolution
+
+      Monitoring détaillé des améliorations :
+      
+      .. list-table::
+         :widths: 25 25 25 25
+         :header-rows: 1
+         
+         * - Itération
+           - Score DfX
+           - Amélioration
+           - Temps
+         * - #1
+           - 0.65
+           - Base
+           - 2:15
+         * - #2
+           - 0.78
+           - +13%
+           - 1:45
+         * - #3
+           - 0.89
+           - +11%
+           - 1:30
+
+   .. tab:: 🧠 Intelligence Collective
+
+      Combinaison feedback humain + analyse IA :
+
+      .. raw:: html
+
+         <div class="ai-human-collab">
+           <div class="ai-side">
+             <h4>Analyse IA</h4>
+             <ul>
+               <li>Reconnaissance des patterns</li>
+               <li>Optimisation paramétrique</li>
+               <li>Prédiction des scores</li>
+             </ul>
+           </div>
+           <div class="human-side">
+             <h4>Expertise Humaine</h4>
+             <ul>
+               <li>Contexte métier</li>
+               <li>Érgonomie ressentie</li>
+               <li>Critères esthétiques</li>
+             </ul>
+           </div>
+         </div>
+
+Approche 3: Transformation 3D avec Reconstruction IA
+=====================================================
+
+.. grid:: 2
+   :gutter: 3
+
+   .. grid-item-card::
+      :class-header: bg-info
+      :link: #workflow-3d
+      :link-type: ref
+
+      **🎯 Objectif Industriel**
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      Conversion automatique d'images 2D en modèles 3D manufacturables
+
+      .. list-table::
+         :widths: 30 70
+         :header-rows: 0
+
+         * - **Reconstruction**
+           - Stable Fast 3D
+         * - **Précision**
+           - ±2% dimensions
+         * - **Formats**
+           - GLB, OBJ, STL
+         * - **Optimisation**
+           - Auto-remeshing
+
+   .. grid-item-card::
+      :class-header: bg-danger
+      :link: #tech-stack-3d
+      :link-type: ref
+
+      **🧠 Stack Technologique**
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      .. list-table::
+         :widths: 40 60
+         :header-rows: 1
+         
+         * - Composant
+           - Technologie
+         * - Reconstruction 3D
+           - Stability AI Fast3D
+         * - Segmentation
+           - SAM (Segment Anything)
+         * - Texturing
+           - Neural Textures
+         * - Optimisation
+           - MeshLab + Blender
+
+**Pipeline de Reconstruction 3D**
+
+.. raw:: html
+
+   <div class="pipeline-3d">
+     <div class="pipeline-step">
+       <div class="step-number">1</div>
+       <h4>Segmentation</h4>
+       <p>Isolation de l'objet principal</p>
+     </div>
+     <div class="pipeline-arrow">→</div>
+     <div class="pipeline-step">
+       <div class="step-number">2</div>
+       <h4>Estimation Profondeur</h4>
+       <p>Map de profondeur avec MiDaS</p>
+     </div>
+     <div class="pipeline-arrow">→</div>
+     <div class="pipeline-step">
+       <div class="step-number">3</div>
+       <h4>Reconstruction</h4>
+       <p>Génération du mesh 3D</p>
+     </div>
+     <div class="pipeline-arrow">→</div>
+     <div class="pipeline-step">
+       <div class="step-number">4</div>
+       <h4>Texturing</h4>
+       <p>Projection des textures</p>
+     </div>
+     <div class="pipeline-arrow">→</div>
+     <div class="pipeline-step">
+       <div class="step-number">5</div>
+       <h4>Optimisation</h4>
+       <p>Réduction polygones + UV mapping</p>
+     </div>
+   </div>
+
+.. figure:: _static/3d_pipeline_diagram.png
+   :alt: Diagramme du pipeline 3D complet
    :align: center
-   :width: 300px
+   :width: 100%
+   :class: shadow-lg rounded-3
 
----
+   *Figure 1.2 : Architecture du pipeline de transformation 3D automatisé*
 
-Les différentes approches utilisées
-===================================
+Comparaison Stratégique des Approches
+======================================
 
-La plateforme Ideate propose trois approches distinctes pour répondre aux différents besoins en conception industrielle :
+.. list-table:: Matrice de sélection d'approche
+   :widths: 20 30 25 25
+   :header-rows: 1
+   :class: comparison-table
+   :name: table-approaches-comparison
 
-Approche 1 : Design Rapide avec Analyse DfX
---------------------------------------------
+   * - **Critère**
+     - **Design Rapide ⚡**
+     - **Design Itératif 🔄**
+     - **Transformation 3D 🧊**
+   * - Temps d'exécution
+     - 1-3 min
+     - 15-45 min
+     - 3-10 min
+   * - Complexité
+     - Faible
+     - Moyenne à Élevée
+     - Moyenne
+   * - Interaction IA
+     - Automatique
+     - Guidée + Automatique
+     - Automatique
+   * - Sorties
+     - PNG + DfX
+     - Suite PNG + Évolution
+     - GLB/OBJ/STL
+   * - Meilleur usage
+     - Exploration
+     - Raffinement
+     - Prototypage
+   * - Expertise requise
+     - Débutant
+     - Intermédiaire
+     - Technique
 
-**Objectif** : Génération rapide de concepts avec évaluation DfX en temps réel.
+==========================================================================
+Workflows Détaillés - Architectures et Exécution
+==========================================================================
 
-Cette approche permet aux designers de générer rapidement des concepts de produits à partir de briefs textuels ou de croquis, avec une analyse immédiate des critères Design for Excellence (DfX).
+.. _workflow-design-rapide:
 
-**Caractéristiques principales** :
+Workflow 1: Pipeline de Design Rapide avec DfX
+===============================================
 
-- Génération texte→image et croquis→image
-- Analyse DfX automatique (DFA, DFM, DFS, DFSust)
-- Raffinement guidé par l'IA
-- Gestion de projet intégrée
-
-Approche 2 : Design Itératif Avancé
-------------------------------------
-
-**Objectif** : Processus d'amélioration progressive par itérations successives.
-
-Cette méthodologie permet d'affiner un design sur plusieurs cycles, en intégrant du feedback à chaque étape pour optimiser le résultat final.
-
-**Caractéristiques principales** :
-
-- Processus en 5 étapes structurées
-- Feedback humain intégré à chaque itération
-- Suivi d'évolution visuel
-- Export multi-format
-
-Approche 3 : Transformation 3D Automatisée
--------------------------------------------
-
-**Objectif** : Conversion d'images 2D en modèles 3D optimisés pour fabrication.
-
-Grâce à l'IA Stable Fast 3D de Stability AI, cette approche transforme n'importe quelle image en modèle 3D prêt pour l'impression 3D, la visualisation ou l'intégration dans des outils CAO.
-
-**Caractéristiques principales** :
-
-- Génération automatique de maillages 3D
-- Paramétrage avancé des textures et résolutions
-- Formats de sortie industriels (GLB, OBJ)
-- Visualisation intégrée
-
-.. image:: _static/approches_comparaison.png
-   :alt: Comparaison des trois approches Ideate
+.. figure:: _static/workflow_design_rapide_detailed.png
+   :alt: Architecture détaillée du workflow Design Rapide
    :align: center
-   :width: 800px
-   :class: bordered-image
+   :width: 100%
+   :class: workflow-diagram
 
-*Figure 1 : Vue comparative des trois approches de conception disponibles sur Ideate*
+   *Figure 2.1 : Architecture technique du pipeline Design Rapide*
 
-Workflows détaillés
-===================
+Étape 1: Génération de Brief Intelligent
+-----------------------------------------
 
-Workflow 1 : Design Rapide avec Analyse DfX
--------------------------------------------
-
-.. figure:: _static/workflow_rapide.png
-   :alt: Workflow du Design Rapide
-   :align: center
-   :width: 900px
-   :class: bordered-image
-
-   *Figure 2 : Workflow détaillé de l'approche Design Rapide*
-
-Étape 1 : Configuration du Concept
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Sélection des paramètres** :
+**Système Prompt Engineering Avancé**
 
 .. code-block:: javascript
+   :linenos:
+   :caption: Générateur de prompt intelligent
+   :emphasize-lines: 15-22
 
-   const [specifications, setSpecifications] = useState({
-     point_vue: "vue trois-quarts",
-     style_rendu: "photographie produit",
-     hauteur: 512,
-     largeur: 512,
-     aspect: "DFM"
-   });
-
-**Génération du prompt** :
-
-Le système utilise un générateur de prompt intelligent qui combine :
-
-1. Catégorie produit (7 catégories disponibles)
-2. Focus design (6 aspects DfX)
-3. Style visuel (9 styles prédéfinis)
-4. Instructions personnalisées
-
-**Génération avec Mistral** :
-
-.. code-block:: javascript
-
-   const genererBriefDesign = async () => {
-     const promptSysteme = `Vous êtes un designer industriel expert...`;
-     const reponse = await fetch('/api/generate-prompt', {
-       method: 'POST',
-       body: JSON.stringify({ prompt: promptSysteme })
-     });
-   };
-
-Étape 2 : Génération d'Image
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Dualité des moteurs** :
-
-*Mode Texte→Image* : Hugging Face (SDXL, SD3.5, FLUX)
-*Mode Croquis→Image* : Stability AI + ControlNet
-
-**Pipeline de génération** :
-
-.. code-block:: javascript
-
-   const genererImage = async () => {
-     const formData = new FormData();
-     formData.append('prompt', promptDesign);
-     formData.append('model', modeleSelectionne);
-     formData.append('specifications', JSON.stringify(specifications));
+   class GenerateurPromptDesign {
+     constructor() {
+       this.categoriesProduits = {
+         "Électronique Grand Public": ["smartphone", "ordinateur portable", "enceinte"],
+         "Mobilier": ["chaise", "bureau", "étagère"],
+         "Transport": ["trotinette", "vélo", "tableau de bord"],
+         "Électroménager": ["machine à café", "mixeur", "grille-pain"],
+         "Équipement Industriel": ["outil électrique", "panneau de contrôle"],
+         "Éclairage": ["lampe de bureau", "lampe sur pied"],
+         "Vêtements Connectés": ["traqueur d'activité", "lunettes connectées"]
+       };
+       
+       this.donneesFocus = {
+         "Facteur Forme": {
+           "keyword": "facteur forme", 
+           "details": ["lignes épurées", "proportions géométriques", "design compact"]
+         },
+         "Étude Matériaux": {
+           "keyword": "innovation matériaux",
+           "details": ["matériaux durables", "combinaisons matériaux novatrices"]
+         }
+       };
+     }
      
-     if (mode === "Croquis → Image" && fichierCroquis) {
-       formData.append('sketch', fichierCroquis);
+     genererPrompt(categorie, focus, style, inputUtilisateur) {
+       // Logique de combinaison intelligente
+       return promptOptimise;
+     }
+   }
+
+**Intégration Mistral 7B pour le NLP**
+
+.. code-block:: python
+   :linenos:
+   :caption: API de génération de prompt avec Mistral
+
+   @app.post("/api/generate-prompt")
+   async def generate_prompt(request: PromptRequest):
+       """
+       Génère un prompt optimisé avec Mistral 7B
+       """
+       prompt_system = f"""
+       Vous êtes un designer industriel expert spécialisé en {request.category}.
+       Créez un prompt concis pour un {request.item} avec focus sur {request.focus}.
+       Style: {request.style}
+       Instructions additionnelles: {request.user_input}
+       """
+       
+       response = await mistral_client.chat.completions.create(
+           model="mistral-7b-instruct",
+           messages=[{"role": "system", "content": prompt_system}],
+           max_tokens=150,
+           temperature=0.7
+       )
+       
+       return {
+           "success": True,
+           "prompt": response.choices[0].message.content,
+           "tokens_used": response.usage.total_tokens
+       }
+
+Étape 2: Génération d'Image Multi-Modèle
+-----------------------------------------
+
+**Architecture de Génération Duale**
+
+.. tabs::
+
+   .. tab:: Mode Texte→Image 🤖
+
+      **Modèles Hugging Face Supportés**
+      
+      .. grid:: 3
+         :gutter: 2
+         
+         .. grid-item::
+            :class-card: model-card
+            
+            **SDXL Base**
+            ^^^^^^^^^^^^
+            
+            *Résolution:* 1024px
+            *Usage:* Généraliste
+            *Vitesse:* Moyenne
+            
+         .. grid-item::
+            :class-card: model-card
+            
+            **SD 3.5 Large**
+            ^^^^^^^^^^^^^^^^
+            
+            *Résolution:* 1024px  
+            *Usage:* Haute qualité
+            *Vitesse:* Lente
+            
+         .. grid-item::
+            :class-card: model-card
+            
+            **FLUX.1 Schnell**
+            ^^^^^^^^^^^^^^^^^^
+            
+            *Résolution:* 1024px
+            *Usage:* Rapide
+            *Vitesse:* Très rapide
+
+   .. tab:: Mode Croquis→Image 🎨
+
+      **Pipeline ControlNet Stability AI**
+      
+      .. mermaid::
+         
+         graph LR
+           A[Croquis Upload] --> B[Prétraitement]
+           B --> C[Extraction Contours]
+           C --> D[ControlNet SDXL]
+           D --> E[Génération Guidée]
+           E --> F[Image Finale]
+
+**Code d'Orchestration de Génération**
+
+.. code-block:: javascript
+   :linenos:
+   :caption: Service de génération d'images
+   :emphasize-lines: 20-35
+
+   class ImageGenerationService {
+     async generateImage(params) {
+       const { prompt, model, specifications, mode, sketch } = params;
+       
+       // Sélection du provider
+       let provider;
+       if (mode === "Croquis → Image") {
+         provider = this.stabilityAIService;
+       } else {
+         provider = this.huggingFaceService;
+       }
+       
+       // Configuration des paramètres
+       const generationConfig = {
+         prompt: prompt,
+         negative_prompt: specifications.prompt_negatif,
+         steps: specifications.etapes_inference,
+         guidance_scale: specifications.echelle_guidage,
+         width: specifications.largeur,
+         height: specifications.hauteur,
+         seed: specifications.seed_aleatoire ? 
+               Math.floor(Math.random() * 2147483647) : 
+               specifications.seed
+       };
+       
+       // Ajout du croquis si disponible
+       if (sketch && mode === "Croquis → Image") {
+         generationConfig.sketch = sketch;
+         generationConfig.control_strength = specifications.echelle_controlnet;
+       }
+       
+       // Appel API
+       const result = await provider.generate(generationConfig);
+       
+       return {
+         image: result.images[0],
+         seed: result.seed,
+         provider: provider.name,
+         metadata: generationConfig
+       };
+     }
+   }
+
+Étape 3: Analyse DfX Automatique
+---------------------------------
+
+**Système d'Évaluation Multi-Critères**
+
+.. code-block:: python
+   :linenos:
+   :caption: Module d'analyse DfX
+   :emphasize-lines: 10-25
+
+   class DfxAnalyzer:
+       def __init__(self):
+           self.aspects = {
+               'DFA': self.analyze_assembly,
+               'DFM': self.analyze_manufacturing, 
+               'DFS': self.analyze_service,
+               'DFSust': self.analyze_sustainability
+           }
+           
+       async def analyze_image(self, image_data, prompt, aspect, category):
+           """
+           Analyse complète DfX d'une image générée
+           """
+           # 1. Extraction des caractéristiques
+           features = await self.extract_features(image_data)
+           
+           # 2. Analyse spécifique à l'aspect
+           aspect_analysis = await self.aspects[aspect](features, prompt)
+           
+           # 3. Calcul du score composite
+           score = self.calculate_score(aspect_analysis)
+           
+           # 4. Génération du rapport
+           report = self.generate_report(features, aspect_analysis, score)
+           
+           return {
+               'score': score,
+               'metrics': aspect_analysis,
+               'report': report,
+               'qualifier': self.get_qualifier(score)
+           }
+       
+       def calculate_score(self, metrics):
+           """Calcul du score DfX pondéré"""
+           weights = {
+               'complexity': 0.3,
+               'symmetry': 0.2,
+               'part_count': 0.25,
+               'material_efficiency': 0.25
+           }
+           
+           total = sum(metrics[key] * weights[key] for key in weights)
+           return round(total, 3)
+
+**Métriques DfX Détaillées**
+
+.. grid:: 2
+   :gutter: 3
+
+   .. grid-item::
+   
+      **DFA - Design for Assembly**
+      
+      .. list-table::
+         :widths: 50 50
+         :header-rows: 1
+         
+         * - Métrique
+           - Poids
+         * - Nombre de pièces
+           - 25%
+         * - Accessibilité
+           - 20%
+         * - Orientation
+           - 15%
+         * - Outillage
+           - 20%
+         * - Standardisation
+           - 20%
+
+   .. grid-item::
+   
+      **DFM - Design for Manufacturing**
+      
+      .. list-table::
+         :widths: 50 50
+         :header-rows: 1
+         
+         * - Métrique
+           - Poids
+         * - Complexité géométrique
+           - 30%
+         * - Tolérance dimensionnelle
+           - 25%
+         * - Matériaux
+           - 20%
+         * - Processus
+           - 15%
+         * - Coût estimé
+           - 10%
+
+Étape 4: Système de Recommandation IA
+--------------------------------------
+
+**Algorithme de Raffinement Intelligent**
+
+.. code-block:: python
+   :linenos:
+   :caption: Service de recommandation DfX
+   :emphasize-lines: 15-30
+
+   class DfxRefinementService:
+       def __init__(self):
+           self.llm_client = MistralClient()
+           self.rules_engine = DfxRulesEngine()
+           
+       async def generate_recommendations(self, current_design, dfx_scores):
+           """
+           Génère des recommandations d'amélioration basées sur les scores DfX
+           """
+           # Identification des points faibles
+           weak_points = self.identify_weak_points(dfx_scores)
+           
+           # Génération de suggestions
+           suggestions = []
+           for point in weak_points:
+               suggestion = await self.generate_suggestion(
+                   point, 
+                   current_design.prompt,
+                   dfx_scores[point]
+               )
+               suggestions.append(suggestion)
+           
+           # Génération de prompt amélioré
+           improved_prompt = await self.refine_prompt(
+               current_design.prompt,
+               suggestions
+           )
+           
+           return {
+               'improved_prompt': improved_prompt,
+               'suggestions': suggestions,
+               'expected_improvement': self.calculate_expected_improvement(dfx_scores, suggestions)
+           }
+       
+       def identify_weak_points(self, scores, threshold=0.6):
+           """Identifie les métriques sous le seuil acceptable"""
+           return [metric for metric, score in scores.items() if score < threshold]
+
+Étape 5: Export et Gestion de Projet
+-------------------------------------
+
+**Système d'Export Multi-Format**
+
+.. code-block:: javascript
+   :linenos:
+   :caption: Service d'export de projets
+   :emphasize-lines: 10-25
+
+   class ProjectExportService {
+     async exportProject(projectId, format = 'all') {
+       const project = await this.getProject(projectId);
+       const iterations = await this.getIterations(projectId);
+       
+       const exportData = {
+         project: {
+           metadata: project.metadata,
+           settings: project.settings,
+           timeline: project.timeline
+         },
+         iterations: iterations.map(iter => ({
+           number: iter.iteration_number,
+           prompt: iter.prompt,
+           image_url: iter.image_url,
+           dfx_score: iter.dfx_score,
+           dfx_metrics: iter.dfx_metrics,
+           created_at: iter.created_at
+         }))
+       };
+       
+       // Génération des différents formats
+       switch(format) {
+         case 'json':
+           return this.exportAsJson(exportData);
+         case 'pdf':
+           return await this.exportAsPdf(exportData);
+         case 'zip':
+           return await this.exportAsZip(exportData);
+         case 'all':
+           return await this.exportAllFormats(exportData);
+       }
+     }
+   }
+
+.. _workflow-iteratif-detail:
+
+Workflow 2: Processus Itératif d'Optimisation
+==============================================
+
+.. figure:: _static/workflow_iteratif_detailed.png
+   :alt: Diagramme détaillé du workflow itératif
+   :align: center
+   :width: 100%
+   :class: workflow-diagram
+
+   *Figure 2.2 : Architecture du processus itératif en 5 phases*
+
+Phase 1: Initialisation du Projet
+----------------------------------
+
+**Structure de Données de Projet Itératif**
+
+.. code-block:: javascript
+   :linenos:
+   :caption: Modèle de projet itératif
+   :emphasize-lines: 5-15
+
+   const iterativeProjectSchema = {
+     id: 'uuid',
+     user_id: 'uuid',
+     title: 'string',
+     type: 'iterative',
+     status: 'in_progress|completed|archived',
+     
+     // Paramètres initiaux
+     initial_config: {
+       category: 'Électronique Grand Public',
+       focus: 'Facteur Forme',
+       style: 'Minimaliste',
+       prompt: 'string',
+       sketch_data: 'base64|null'
+     },
+     
+     // Suivi d'évolution
+     timeline: [{
+       iteration: 1,
+       action: 'initial_generation',
+       timestamp: 'ISO8601',
+       score: 0.65,
+       feedback: null
+     }],
+     
+     // Configuration technique
+     specifications: {
+       aspect: 'DFM',
+       model: 'Stable Diffusion 3.5 Large',
+       resolution: '1024x1024'
      }
    };
 
-Étape 3 : Analyse DfX Automatique
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Phase 2: Boucle d'Amélioration
+-------------------------------
 
-**Appel à l'API DfX** :
+**Cycle d'Itération Automatisé**
 
-.. code-block:: javascript
-
-   const analyserAvecDfx = async (imageBase64, prompt, aspect, category) => {
-     const response = await fetch('/api/generate-dfx-report', {
-       method: 'POST',
-       body: JSON.stringify({
-         imageData: imageBase64,
-         prompt,
-         aspect,
-         category
-       })
-     });
-   };
-
-**Métriques évaluées** :
-
-- *DFA* : Nombre de pièces, accessibilité, orientation
-- *DFM* : Complexité géométrique, tolérance, matériaux
-- *DFS* : Modularité, points d'accès, standardisation
-- *DFSust* : Recyclabilité, énergie, impact environnemental
-
-Étape 4 : Raffinement Guidé
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Système de recommandation** :
-
-.. code-block:: javascript
-
-   const raffinerDesignDfx = async (projectId, currentPrompt, currentMetrics) => {
-     const response = await fetch('/api/refine-dfx', {
-       method: 'POST',
-       body: JSON.stringify({
-         projectId,
-         currentPrompt,
-         currentMetrics,
-         currentScore
-       })
-     });
-   };
-
-**Améliorations suggérées** :
-
-1. Modification du prompt pour optimiser les scores faibles
-2. Ajustement des paramètres de génération
-3. Suggestions de variantes
-
-Étape 5 : Gestion de Projet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Structure de données** :
-
-.. code-block:: javascript
-
-   const iterationData = {
-     project_id: projet.id,
-     iteration_number: iterationActuelle,
-     image_url: resultat.image,
-     prompt: promptDesign,
-     model_used: modeleSelectionne,
-     dfx_score: dfxResult.score,
-     dfx_metrics: dfxResult.metrics,
-     dfx_report: dfxResult.report
-   };
-
-**Export multi-format** :
-
-- Images individuelles (PNG haute résolution)
-- Toutes les itérations (batch download)
-- Projet complet (JSON structuré)
-- Rapport DfX (HTML/PDF)
-
-Workflow 2 : Design Itératif Avancé
-------------------------------------
-
-.. figure:: _static/workflow_iteratif.png
-   :alt: Workflow du Design Itératif
-   :align: center
-   :width: 900px
-   :class: bordered-image
-
-   *Figure 3 : Workflow en 5 étapes de l'approche itérative*
-
-Étape 1 : Brief Initial
-^^^^^^^^^^^^^^^^^^^^^^^
-
-**Collecte des exigences** :
-
-1. Sélection de la catégorie produit
-2. Définition du focus design
-3. Choix du style visuel
-4. Instructions supplémentaires
-
-**Création du projet** :
-
-.. code-block:: javascript
-
-   const demarrerProjet = async () => {
-     const { data: projet, error } = await supabase
-       .from('design_projects')
-       .insert({
-         user_id: utilisateur.id,
-         title: `${categorie} - ${focus} - ${style}`,
-         type: 'iterative',
-         status: 'in_progress'
-       })
-       .select()
-       .single();
-   };
-
-Étape 2 : Première Itération
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Choix du point de départ** :
-
-- À partir d'un croquis (ControlNet)
-- À partir d'un prompt (SDXL/FLUX)
-- À partir d'une image existante
-
-**Génération initiale** :
-
-.. code-block:: javascript
-
-   const genererIteration = async (type = 'first') => {
-     const iterationNum = iterations.length + 1;
-     const mode = fichierCroquis && type === 'first' 
-       ? "Croquis → Image" 
-       : "Texte → Image";
-   };
-
-Étape 3 : Évaluation et Feedback
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Interface de feedback** :
-
-.. code-block:: javascript
-
-   const [feedbackAmelioration, setFeedbackAmelioration] = useState("");
+.. mermaid::
    
-   <textarea
-     value={feedbackAmelioration}
-     onChange={(e) => setFeedbackAmelioration(e.target.value)}
-     placeholder="Exemple: Rendre les angles plus arrondis..."
-   />
-
-**Types de feedback supportés** :
-
-1. *Forme* : Dimensions, proportions, courbures
-2. *Matériaux* : Textures, finitions, couleurs
-3. *Fonctionnalités* : Éléments mécaniques, ergonomie
-4. *Style* : Esthétique, cohérence visuelle
-
-Étape 4 : Itérations Successives
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Boucle d'amélioration** :
-
-.. code-block:: javascript
-
-   // Amélioration avec feedback
-   await genererIteration('improvement');
-   
-   // Nouvelle itération sans feedback
-   const iterationSuivanteSansFeedback = async () => {
-     setFeedbackAmelioration("");
-     await genererIteration('improvement');
-   };
-
-**Intégration du feedback** :
-
-1. Analyse sémantique du texte
-2. Mapping vers des paramètres de génération
-3. Ajustement des poids ControlNet
-4. Modification du prompt de base
-
-Étape 5 : Finalisation
-^^^^^^^^^^^^^^^^^^^^^^
-
-**Sélection de la version finale** :
-
-.. code-block:: javascript
-
-   const terminerProjet = async () => {
-     await supabase
-       .from('design_projects')
-       .update({
-         status: 'completed',
-         final_iteration_id: iterationActuelle.id
-       })
-       .eq('id', projetId);
-   };
-
-**Rapport d'évolution** :
-
-- Graphique des scores DfX par itération
-- Timeline visuelle des changements
-- Synthèse des modifications
-- Recommandations pour production
-
-Workflow 3 : Transformation 3D
-------------------------------
-
-.. figure:: _static/workflow_3d.png
-   :alt: Workflow de Transformation 3D
-   :align: center
-   :width: 900px
-   :class: bordered-image
-
-   *Figure 4 : Workflow complet de génération 3D à partir d'images*
-
-Étape 1 : Préparation de l'Image
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Critères d'image optimale** :
-
-- Format : PNG, JPG, JPEG (carré recommandé)
-- Résolution : 512×512px minimum (1024×1024px idéal)
-- Composition : Objet centré, fond contrasté
-- Éclairage : Uniforme, pas d'ombres prononcées
-
-**Upload et prétraitement** :
-
-.. code-block:: javascript
-
-   <ImageUploader3D
-     onImageUpload={setImageSource}
-     disabled={chargement}
-   />
-
-**Validation automatique** :
-
-1. Vérification du format et de la taille
-2. Analyse de la composition
-3. Détection de l'objet principal
-4. Estimation de la complexité
-
-Étape 2 : Paramétrage 3D
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Configuration du modèle** :
-
-.. code-block:: javascript
-
-   const [parametres, setParametres] = useState({
-     texture_resolution: 1024,
-     foreground_ratio: 0.85,
-     remesh_option: 'triangle'
-   });
-
-**Options de maillage** :
-
-- *none* : Conservation du maillage original
-- *triangle* : Maillage standard (recommandé)
-- *quad* : Quadrilatères (optimisé pour animation)
-
-**Réglages avancés** :
-
-1. Résolution des textures (512px à 2048px)
-2. Ratio avant-plan/arrière-plan (0.1 à 1.0)
-3. Niveau de détail géométrique
-4. Optimisation pour impression 3D
-
-Étape 3 : Génération avec Stable Fast 3D
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Pipeline de reconstruction** :
-
-.. code-block:: javascript
-
-   const genererModele3D = async () => {
-     const formData = new FormData();
-     formData.append('title', titreProjet);
-     formData.append('image', imageSource);
-     formData.append('texture_resolution', parametres.texture_resolution);
+   sequenceDiagram
+     participant U as Utilisateur
+     participant F as Frontend
+     participant B as Backend
+     participant AI as IA Service
+     participant DB as Database
      
-     const response = await fetch('/api/generate-3d', {
-       method: 'POST',
-       body: formData
+     U->>F: Soumet feedback d'amélioration
+     F->>B: POST /api/iterative/improve
+     B->>AI: Génère nouvelle version
+     AI-->>B: Image + analyse DfX
+     B->>DB: Sauvegarde itération
+     DB-->>B: Confirmation
+     B-->>F: Résultats + comparaison
+     F-->>U: Affichage côte à côte
+
+**Interface de Feedback Contextuel**
+
+.. code-block:: javascript
+   :linenos:
+   :caption: Composant de feedback itératif
+   :emphasize-lines: 25-40
+
+   const IterativeFeedbackPanel = ({ iteration, onFeedbackSubmit }) => {
+     const [feedback, setFeedback] = useState('');
+     const [category, setCategory] = useState('general');
+     
+     // Catégories de feedback prédéfinies
+     const feedbackCategories = [
+       { id: 'shape', label: 'Forme/Proportions', examples: ['Plus arrondi', 'Plus mince', 'Plus large'] },
+       { id: 'materials', label: 'Matériaux/Textures', examples: ['Texture métallique', 'Finition mate', 'Surface brillante'] },
+       { id: 'functionality', label: 'Fonctionnalités', examples: ['Ajouter des ports', 'Améliorer la prise en main', 'Ajouter des LED'] },
+       { id: 'style', label: 'Style/Esthétique', examples: ['Plus futuriste', 'Style vintage', 'Design minimaliste'] }
+     ];
+     
+     // Suggestions automatiques basées sur l'analyse DfX
+     const autoSuggestions = iteration.dfx_metrics?.weak_points.map(point => 
+       `Améliorer ${point.name}: ${point.suggestion}`
+     ) || [];
+     
+     const handleSubmit = async () => {
+       const feedbackData = {
+         text: feedback,
+         category: category,
+         iteration_id: iteration.id,
+         timestamp: new Date().toISOString(),
+         // Analyse de sentiment
+         sentiment: await analyzeSentiment(feedback)
+       };
+       
+       await onFeedbackSubmit(feedbackData);
+     };
+     
+     return (
+       <div className="feedback-panel">
+         <textarea
+           value={feedback}
+           onChange={(e) => setFeedback(e.target.value)}
+           placeholder="Décrivez les améliorations souhaitées..."
+           rows={4}
+         />
+         
+         <div className="suggestions-grid">
+           {autoSuggestions.map((suggestion, idx) => (
+             <button key={idx} onClick={() => setFeedback(suggestion)}>
+               {suggestion}
+             </button>
+           ))}
+         </div>
+       </div>
+     );
+   };
+
+Phase 3: Analyse Comparative
+-----------------------------
+
+**Visualisation d'Évolution**
+
+.. code-block:: javascript
+   :linenos:
+   :caption: Composant de comparaison d'itérations
+   :emphasize-lines: 15-30
+
+   const IterationComparisonView = ({ iterations, currentIteration }) => {
+     // Données pour le graphique d'évolution
+     const evolutionData = {
+       labels: iterations.map(i => `Itération ${i.number}`),
+       datasets: [
+         {
+           label: 'Score DfX',
+           data: iterations.map(i => i.dfx_score * 100),
+           borderColor: 'rgb(59, 130, 246)',
+           backgroundColor: 'rgba(59, 130, 246, 0.1)',
+           tension: 0.3
+         }
+       ]
+     };
+     
+     // Calcul des améliorations
+     const improvements = iterations.map((iter, idx) => {
+       if (idx === 0) return { percent: 0, details: 'Base' };
+       const prevScore = iterations[idx - 1].dfx_score;
+       const improvement = ((iter.dfx_score - prevScore) / prevScore) * 100;
+       
+       return {
+         percent: Math.round(improvement * 10) / 10,
+         details: iter.feedback || 'Amélioration automatique'
+       };
      });
+     
+     return (
+       <div className="comparison-container">
+         <div className="score-evolution">
+           <Line data={evolutionData} />
+         </div>
+         
+         <div className="improvement-list">
+           {improvements.map((imp, idx) => (
+             <div key={idx} className="improvement-item">
+               <span className="iteration">#{idx + 1}</span>
+               <span className="percent">+{imp.percent}%</span>
+               <span className="details">{imp.details}</span>
+             </div>
+           ))}
+         </div>
+       </div>
+     );
    };
 
-**Processus IA** :
+Phase 4: Décision de Finalisation
+----------------------------------
 
-1. Segmentation de l'objet
-2. Reconstruction de la profondeur
-3. Génération du maillage 3D
-4. Projection des textures
-5. Optimisation topologique
-
-Étape 4 : Post-traitement
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Optimisations automatiques** :
-
-- Réduction du nombre de polygones
-- Correction des non-manifold geometry
-- Unwrapping UV automatique
-- Génération des normales et tangentes
-
-**Génération des sorties** :
+**Critères d'Arrêt Intelligents**
 
 .. code-block:: javascript
+   :linenos:
+   :caption: Système de décision de finalisation
+   :emphasize-lines: 10-25
 
-   const resultatTransformation = {
-     output_glb_url: "https://.../model.glb",
-     thumbnail_url: "https://.../preview.jpg",
-     file_size: 5242880, // 5MB
-     processing_time: 127 // secondes
-   };
+   class TerminationDecisionSystem {
+     constructor() {
+       this.thresholds = {
+         score_target: 0.85,
+         max_iterations: 10,
+         min_improvement: 0.02,
+         max_time_minutes: 60
+       };
+     }
+     
+     shouldTerminate(project) {
+       const currentIteration = project.iterations[project.iterations.length - 1];
+       const totalTime = this.calculateTotalTime(project);
+       
+       // Critère 1: Score cible atteint
+       if (currentIteration.dfx_score >= this.thresholds.score_target) {
+         return { terminate: true, reason: 'score_target_reached' };
+       }
+       
+       // Critère 2: Nombre maximal d'itérations
+       if (project.iterations.length >= this.thresholds.max_iterations) {
+         return { terminate: true, reason: 'max_iterations_reached' };
+       }
+       
+       // Critère 3: Amélioration minimale non atteinte
+       if (project.iterations.length > 3) {
+         const recentImprovements = this.calculateRecentImprovements(project);
+         if (recentImprovements < this.thresholds.min_improvement) {
+           return { terminate: true, reason: 'diminishing_returns' };
+         }
+       }
+       
+       // Critère 4: Temps maximal dépassé
+       if (totalTime > this.thresholds.max_time_minutes * 60 * 1000) {
+         return { terminate: true, reason: 'time_limit_reached' };
+       }
+       
+       return { terminate: false, reason: null };
+     }
+   }
 
-Étape 5 : Visualisation et Export
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Phase 5: Génération de Rapport Final
+-------------------------------------
 
-**Visualiseur intégré** :
+**Rapport d'Optimisation Complet**
 
 .. code-block:: javascript
+   :linenos:
+   :caption: Génération du rapport final itératif
+   :emphasize-lines: 20-35
 
-   <ModelViewer
-     glbUrl={resultatTransformation.output_glb_url}
-     thumbnailUrl={resultatTransformation.thumbnail_url}
-     fileName={`${titreProjet}.glb`}
-   />
+   class IterativeReportGenerator {
+     async generateFinalReport(project) {
+       const report = {
+         // Métadonnées
+         project: project.metadata,
+         summary: this.generateSummary(project),
+         
+         // Analyse quantitative
+         metrics: {
+           total_iterations: project.iterations.length,
+           total_time: this.formatDuration(project.timeline),
+           final_score: project.iterations[project.iterations.length - 1].dfx_score,
+           score_improvement: this.calculateTotalImprovement(project),
+           best_iteration: this.findBestIteration(project)
+         },
+         
+         // Analyse qualitative
+         evolution_analysis: this.analyzeEvolution(project),
+         key_decisions: this.extractKeyDecisions(project),
+         recommendations: this.generateRecommendations(project),
+         
+         // Visualisations
+         charts: {
+           score_evolution: this.generateScoreChart(project),
+           improvement_timeline: this.generateImprovementChart(project),
+           comparison_grid: this.generateComparisonGrid(project.iterations)
+         },
+         
+         // Export des assets
+         assets: {
+           images: project.iterations.map(i => i.image_url),
+           prompts: project.iterations.map(i => i.prompt),
+           feedback: project.iterations.filter(i => i.feedback).map(i => i.feedback)
+         }
+       };
+       
+       return report;
+     }
+   }
 
-**Fonctionnalités du visualiseur** :
+.. _workflow-3d-detailed:
 
-1. Rotation, zoom, pan libre
-2. Vue fil de fer/texturée
-3. Mesures approximatives
-4. Export screenshots
+Workflow 3: Pipeline de Transformation 3D
+==========================================
 
-**Formats d'export supportés** :
+.. figure:: _static/workflow_3d_detailed.png
+   :alt: Architecture détaillée du pipeline 3D
+   :align: center
+   :width: 100%
+   :class: workflow-diagram
 
-+----------------+---------------------+-----------------------------------+
-| Format         | Usage               | Compatibilité                     |
-+================+=====================+===================================+
-| GLB (glTF)     | Standard web/Unity  | Blender, Unity, Unreal, Three.js  |
-+----------------+---------------------+-----------------------------------+
-| OBJ            | CAO/Impression 3D   | Maya, 3ds Max, Cura, PrusaSlicer  |
-+----------------+---------------------+-----------------------------------+
-| STL            | Impression 3D       | Tous les slicers 3D               |
-+----------------+---------------------+-----------------------------------+
-| FBX            | Animation           | Maya, Blender, Unity, Unreal      |
-+----------------+---------------------+-----------------------------------+
+   *Figure 2.3 : Architecture complète du pipeline de transformation 3D*
 
-**Intégration avec outils externes** :
+Étape 1: Prétraitement d'Image Avancé
+--------------------------------------
 
-1. *Blender* : Script Python d'import automatique
-2. *Unity* : Package d'import avec matériaux PBR
-3. *Fusion 360* : Conversion pour modélisation paramétrique
-4. *Cura/PrusaSlicer* : Profils d'impression optimisés
+**Pipeline de Prétraitement Automatique**
 
-Tableau Comparatif des Workflows
---------------------------------
+.. code-block:: python
+   :linenos:
+   :caption: Service de prétraitement d'images
+   :emphasize-lines: 15-30
 
-+---------------------+----------------------+---------------------+----------------------+
-| Caractéristique     | Design Rapide        | Design Itératif     | Transformation 3D    |
-+=====================+======================+=====================+======================+
-| Temps moyen         | 2-5 minutes         | 15-30 minutes       | 3-10 minutes         |
-+---------------------+----------------------+---------------------+----------------------+
-| Complexité          | Faible à moyenne    | Moyenne à élevée    | Moyenne              |
-+---------------------+----------------------+---------------------+----------------------+
-| Sorties principales | Images 2D + DfX     | Images 2D + Évolution| Modèles 3D + Textures|
-+---------------------+----------------------+---------------------+----------------------+
-| Interaction IA      | Automatique         | Guidée              | Automatique          |
-+---------------------+----------------------+---------------------+----------------------+
-| Meilleur usage      | Exploration concept | Raffinement design  | Prototypage 3D       |
-+---------------------+----------------------+---------------------+----------------------+
+   class ImagePreprocessor3D:
+       def __init__(self):
+           self.segmentor = SAM()
+           self.depth_estimator = MiDaS()
+           self.quality_checker = QualityChecker()
+           
+       async def preprocess_image(self, image_file, params):
+           """
+           Prépare l'image pour la reconstruction 3D
+           """
+           # 1. Chargement et validation
+           image = await self.load_image(image_file)
+           validation = await self.validate_image_quality(image)
+           
+           if not validation.valid:
+               raise ValueError(f"Image non valide: {validation.reason}")
+           
+           # 2. Redimensionnement optimal
+           target_size = self.calculate_optimal_size(params.texture_resolution)
+           resized = await self.resize_image(image, target_size)
+           
+           # 3. Segmentation automatique
+           mask = await self.segmentor.segment(resized)
+           
+           # 4. Estimation de profondeur
+           depth_map = await self.depth_estimator.estimate(resized)
+           
+           # 5. Amélioration du contraste
+           enhanced = await self.enhance_contrast(resized, mask)
+           
+           # 6. Génération du masque alpha
+           alpha_mask = await self.generate_alpha_mask(resized, mask)
+           
+           return {
+               'image': enhanced,
+               'mask': mask,
+               'depth_map': depth_map,
+               'alpha_mask': alpha_mask,
+               'metadata': {
+                   'original_size': image.shape[:2],
+                   'processed_size': target_size,
+                   'segmentation_confidence': mask.confidence,
+                   'depth_range': depth_map.range
+               }
+           }
+       
+       def calculate_optimal_size(self, texture_resolution):
+           """Calcule la taille optimale pour la reconstruction"""
+           base_size = texture_resolution
+           # Arrondi à la puissance de 2 la plus proche
+           return 2 ** int(np.log2(base_size))
+
+Étape 2: Reconstruction 3D avec Stable Fast 3D
+-----------------------------------------------
+
+**Configuration de Reconstruction**
+
+.. code-block:: python
+   :linenos:
+   :caption: Service de reconstruction 3D
+   :emphasize-lines: 20-40
+
+   class Fast3DReconstructionService:
+       def __init__(self, api_key):
+           self.client = StabilityClient(api_key=api_key)
+           self.config_presets = {
+               'high_quality': {
+                   'texture_resolution': 2048,
+                   'foreground_ratio': 0.9,
+                   'remesh': 'quad',
+                   'optimize_for': 'rendering'
+               },
+               'fast': {
+                   'texture_resolution': 1024,
+                   'foreground_ratio': 0.85,
+                   'remesh': 'triangle',
+                   'optimize_for': 'speed'
+               },
+               'print_ready': {
+                   'texture_resolution': 1024,
+                   'foreground_ratio': 0.8,
+                   'remesh': 'none',
+                   'optimize_for': '3d_printing'
+               }
+           }
+           
+       async def reconstruct_3d(self, processed_image, params):
+           """
+           Reconstruction 3D avec Stable Fast 3D
+           """
+           # Sélection du preset
+           preset = self.select_preset(params)
+           
+           # Préparation des données
+           reconstruction_data = {
+               'image': processed_image['image'],
+               'mask': processed_image['mask'],
+               'depth_map': processed_image['depth_map'],
+               'config': {
+                   **preset,
+                   'output_format': 'glb',
+                   'generate_uvs': True,
+                   'generate_normals': True,
+                   'center_model': True,
+                   'scale_to_meters': True
+               }
+           }
+           
+           # Appel API Stability AI
+           try:
+               response = await self.client.fast3d.generate(
+                   **reconstruction_data,
+                   timeout=300  # 5 minutes timeout
+               )
+               
+               return {
+                   'success': True,
+                   'model_url': response.model_url,
+                   'thumbnail_url': response.thumbnail_url,
+                   'metadata': {
+                       'vertices': response.vertex_count,
+                       'faces': response.face_count,
+                       'textures': response.texture_count,
+                       'file_size': response.file_size,
+                       'processing_time': response.processing_time
+                   },
+                   'warnings': response.warnings
+               }
+               
+           except Exception as e:
+               logger.error(f"Reconstruction failed: {str(e)}")
+               return {
+                   'success': False,
+                   'error': str(e),
+                   'fallback_attempted': False
+               }
+
+Étape 3: Post-traitement et Optimisation
+-----------------------------------------
+
+**Pipeline d'Optimisation Automatique**
+
+.. code-block:: python
+   :linenos:
+   :caption: Service d'optimisation de maillage
+   :emphasize-lines: 25-45
+
+   class MeshOptimizationService:
+       def __init__(self):
+           self.optimizers = {
+               'decimation': self.optimize_decimation,
+               'remeshing': self.optimize_remeshing,
+               'repair': self.repair_mesh,
+               'uv_unwrap': self.unwrap_uv
+           }
+           
+       async def optimize_model(self, model_path, optimization_profile):
+           """
+           Optimise le modèle 3D selon le profil spécifié
+           """
+           # Chargement du modèle
+           mesh = await self.load_mesh(model_path)
+           
+           # Application des optimisations
+           optimized_mesh = mesh.copy()
+           
+           # 1. Réparation topologique
+           if optimization_profile.get('repair', True):
+               optimized_mesh = await self.optimizers['repair'](optimized_mesh)
+           
+           # 2. Réduction de polygones
+           if optimization_profile.get('decimate', True):
+               target_faces = optimization_profile.get('target_faces', 50000)
+               optimized_mesh = await self.optimizers['decimation'](
+                   optimized_mesh, 
+                   target_faces
+               )
+           
+           # 3. Remaillage
+           remesh_option = optimization_profile.get('remesh', 'triangle')
+           if remesh_option != 'none':
+               optimized_mesh = await self.optimizers['remeshing'](
+                   optimized_mesh,
+                   remesh_option
+               )
+           
+           # 4. UV Unwrapping
+           if optimization_profile.get('unwrap_uv', True):
+               optimized_mesh = await self.optimizers['uv_unwrap'](optimized_mesh)
+           
+           # 5. Génération des normales
+           if optimization_profile.get('generate_normals', True):
+               optimized_mesh = self.generate_normals(optimized_mesh)
+           
+           # Analyse des améliorations
+           improvements = self.analyze_improvements(mesh, optimized_mesh)
+           
+           return {
+               'optimized_mesh': optimized_mesh,
+               'improvements': improvements,
+               'download_url': await self.save_mesh(optimized_mesh)
+           }
+       
+       def analyze_improvements(self, original, optimized):
+           """Calcule les améliorations apportées"""
+           return {
+               'face_reduction': 1 - (optimized.face_count / original.face_count),
+               'vertex_reduction': 1 - (optimized.vertex_count / original.vertex_count),
+               'manifold_fixed': original.non_manifold_edges - optimized.non_manifold_edges,
+               'uv_islands': optimized.uv_island_count
+           }
+
+Étape 4: Validation et Contrôle Qualité
+----------------------------------------
+
+**Système de Validation Automatique**
+
+.. code-block:: python
+   :linenos:
+   :caption: Service de validation 3D
+   :emphasize-lines: 20-35
+
+   class ModelValidationService:
+       def __init__(self):
+           self.validators = {
+               'watertight': self.validate_watertight,
+               'normals': self.validate_normals,
+               'uv': self.validate_uv,
+               'dimensions': self.validate_dimensions,
+               'printability': self.validate_printability
+           }
+           
+       async def validate_model(self, model_path, validation_profile):
+           """
+           Validation complète du modèle 3D généré
+           """
+           mesh = await self.load_mesh(model_path)
+           results = {}
+           
+           # Exécution des validations
+           for validator_name, should_run in validation_profile.items():
+               if should_run:
+                   validator = self.validators[validator_name]
+                   results[validator_name] = await validator(mesh)
+           
+           # Calcul du score global
+           overall_score = self.calculate_overall_score(results)
+           
+           # Génération du rapport
+           report = {
+               'validation_results': results,
+               'overall_score': overall_score,
+               'status': 'PASS' if overall_score >= 0.8 else 'FAIL',
+               'issues': self.extract_issues(results),
+               'recommendations': self.generate_recommendations(results)
+           }
+           
+           return report
+       
+       def validate_printability(self, mesh):
+           """Valide l'aptitude à l'impression 3D"""
+           checks = {
+               'wall_thickness': self.check_wall_thickness(mesh),
+               'overhangs': self.check_overhangs(mesh),
+               'bridges': self.check_bridges(mesh),
+               'supports_needed': self.estimate_supports(mesh)
+           }
+           
+           return {
+               'passed': all(checks.values()),
+               'details': checks,
+               'suggestions': self.generate_print_suggestions(checks)
+           }
+
+Étape 5: Export Multi-Format et Intégration
+--------------------------------------------
+
+**Système d'Export Universel**
+
+.. code-block:: python
+   :linenos:
+   :caption: Service d'export 3D
+   :emphasize-lines: 25-50
+
+   class ModelExportService:
+       SUPPORTED_FORMATS = {
+           'glb': {'type': 'binary', 'features': ['textures', 'animations']},
+           'obj': {'type': 'text', 'features': ['materials', 'uvs']},
+           'stl': {'type': 'binary', 'features': ['geometry_only']},
+           'fbx': {'type': 'binary', 'features': ['full_scene', 'animations']},
+           'ply': {'type': 'text', 'features': ['point_clouds']}
+       }
+       
+       async def export_model(self, model_path, export_formats, options=None):
+           """
+           Exporte le modèle dans les formats demandés
+           """
+           mesh = await self.load_mesh(model_path)
+           exports = {}
+           
+           for format_name in export_formats:
+               if format_name not in self.SUPPORTED_FORMATS:
+                   continue
+                   
+               format_info = self.SUPPORTED_FORMATS[format_name]
+               
+               # Conversion vers le format cible
+               if format_name == 'glb':
+                   exported = await self.export_glb(mesh, options)
+               elif format_name == 'obj':
+                   exported = await self.export_obj(mesh, options)
+               elif format_name == 'stl':
+                   exported = await self.export_stl(mesh, options)
+               elif format_name == 'fbx':
+                   exported = await self.export_fbx(mesh, options)
+               elif format_name == 'ply':
+                   exported = await self.export_ply(mesh, options)
+               
+               exports[format_name] = {
+                   'url': exported.url,
+                   'size': exported.size,
+                   'checksum': exported.checksum,
+                   'metadata': {
+                       'format': format_name,
+                       'vertices': mesh.vertex_count,
+                       'faces': mesh.face_count,
+                       'textures': len(mesh.textures) if hasattr(mesh, 'textures') else 0
+                   }
+               }
+           
+           # Génération du package complet
+           if 'all' in export_formats or len(export_formats) > 1:
+               package_url = await self.create_export_package(exports)
+               exports['package'] = {
+                   'url': package_url,
+                   'formats_included': list(exports.keys()),
+                   'total_size': sum(e['size'] for e in exports.values())
+               }
+           
+           return exports
+
+**Intégration avec les Écosystèmes 3D**
+
+.. list-table:: Compatibilité des Formats d'Export
+   :widths: 20 20 20 20 20
+   :header-rows: 1
+   :class: export-compatibility-table
+
+   * - **Format**
+     - **Blender**
+     - **Unity**
+     - **Unreal**
+     - **Imprimante 3D**
+   * - GLB
+     - ✅ Native
+     - ✅ Native
+     - ✅ Native
+     - ⚠️ Via plugin
+   * - OBJ
+     - ✅ Native
+     - ✅ Native
+     - ✅ Native
+     - ✅ Direct
+   * - STL
+     - ✅ Native
+     - ⚠️ Plugin
+     - ⚠️ Plugin
+     - ✅ Native
+   * - FBX
+     - ✅ Native
+     - ✅ Native
+     - ✅ Native
+     - ❌ Non
+   * - PLY
+     - ✅ Native
+     - ⚠️ Plugin
+     - ⚠️ Plugin
+     - ⚠️ Conversion
+
+.. raw:: html
+
+   <div class="success-banner">
+     <h3>🎉 Documentation en Construction</h3>
+     <p>Les sections suivantes sont en cours de rédaction :</p>
+     <ul>
+       <li>Frontend Architecture</li>
+       <li>Base de Données Supabase</li>
+       <li>Système de Projets et Profils</li>
+       <li>Approche Collaborative</li>
+       <li>Résultats et Métriques</li>
+     </ul>
+   </div>
 
 
 Contact & Contribution
@@ -1663,6 +2599,7 @@ Contact & Contribution
 ----
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
 
 
