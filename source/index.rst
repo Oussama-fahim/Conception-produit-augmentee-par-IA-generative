@@ -8,13 +8,26 @@ Ideate Studio - Documentation Technique
 .. image:: image/prrr.png
    :alt: Ideate Studio Logo
    :align: center
-   :width: 500px
+   :width: 600px
 
 .. centered:: **Plateforme Intelligente de Design Industriel avec Analyse DfX**
 
 .. note::
    Projet d'Expertise - École Nationale Supérieure d'Arts et Métiers (ENSAM)
-  
+
+   Réalisé par : Oussama Fahim    
+
+  Encadré par : Mr. Tawfik Masrour et Mrs. Ibtissam El Hassani
+
+----
+
+Table des Matières
+==================
+
+.. contents:: 
+   :depth: 3
+   :local:
+   :backlinks: top
 
 ----
 
@@ -241,12 +254,14 @@ Ideate Studio se distingue par :
 4. **Open workflow** compatible avec outils existants
 5. **Focus industriel** au-delà du design artistique
 
-Table des Matières
-==================
+----
+
+Documentation Détaillée
+=======================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Guide d'Utilisation
+   :caption: 📘 Guide d'Utilisation
    :numbered:
 
    structure_projet
@@ -257,7 +272,7 @@ Table des Matières
 
 .. toctree::
    :maxdepth: 2
-   :caption: Architecture Technique
+   :caption: 🏗️ Architecture Technique
    :numbered:
 
    frontend
@@ -268,7 +283,7 @@ Table des Matières
 
 .. toctree::
    :maxdepth: 2
-   :caption: Analyse & Résultats
+   :caption: 📊 Analyse & Résultats
    :numbered:
 
    resultats
@@ -277,7 +292,7 @@ Table des Matières
 
 .. toctree::
    :maxdepth: 1
-   :caption: Annexes
+   :caption: 📎 Annexes
 
    glossaire
    references
@@ -318,9 +333,3 @@ Contact & Contribution
 ----
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
-
-
-
-
-
-
