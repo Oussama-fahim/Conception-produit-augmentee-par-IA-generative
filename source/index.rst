@@ -2336,34 +2336,129 @@ Workflow 3: Pipeline de Transformation 3D
      - ⚠️ Plugin
      - ⚠️ Conversion
 
+Architecture Frontend
+========================================
+
+.. image:: _static/architecture_frontend.png
+   :alt: Architecture Frontend - Stack Technologique
+   :align: center
+   :width: 80%
+
+L'architecture frontend repose sur une stack technologique moderne conçue pour des performances optimales et une expérience utilisateur immersive. L'utilisation de Next.js 14 apporte une architecture de rendu hybride combinant génération statique et dynamique, optimisant ainsi les temps de chargement et le référencement. L'intégration de React 18 permet une interface réactive avec des fonctionnalités concurrentes, tandis que Tailwind CSS assure une stylisation cohérente et maintenable.
+
+Les composants serveur modernes réduisent la taille des bundles JavaScript côté client, améliorant les performances globales. L'intégration de Supabase fournit une couche de données en temps réel avec gestion sécurisée de l'authentification. Pour la visualisation, la plateforme utilise des technologies vectorielles et 3D pour des rendus complexes, et intègre des APIs d'intelligence artificielle pour des fonctionnalités avancées de génération de contenu.
+
+Architecture de Base de Données
+========================================
+
+.. image:: _static/architecture_bdd.png
+   :alt: Architecture Base de Données - PostgreSQL & Supabase
+   :align: center
+   :width: 80%
+
+L'architecture de données est construite sur PostgreSQL 15, offrant une base relationnelle robuste avec garanties ACID. La plateforme exploite les fonctionnalités avancées de PostgreSQL, incluant le support natif du JSONB pour les données semi-structurées, la recherche plein texte, et le partitionnement pour une gestion optimale des volumes de données importants.
+
+Supabase étend ces capacités avec des services managés incluant la réplication en temps réel via WebSocket, l'authentification multi-fournisseur, et le stockage objet compatible S3. La sécurité est implémentée au niveau des lignes (RLS), permettant des politiques d'accès granulaires. L'architecture supporte la capture des changements de données (CDC) pour des flux de données en temps réel vers les clients connectés.
+
+Collaboration pour la Conception
+========================================
+
+.. image:: _static/collaboration_conception.png
+   :alt: Écosystème de Collaboration pour le Design Industriel
+   :align: center
+   :width: 80%
+
+L'écosystème collaboratif est structuré autour de trois piliers interconnectés formant un cycle complet de création et de partage. Le module Projets constitue le cœur opérationnel où s'effectue la conception assistée par IA, l'analyse automatisée et la gestion des versions. Il centralise le flux de travail créatif et assure la traçabilité des itérations.
+
+Le module Profil gère l'identité numérique professionnelle, servant de vitrine aux compétences et réalisations. Il intègre des mécanismes de contrôle de visibilité et des métriques d'engagement. Le module Designers forme la plateforme communautaire, facilitant la découverte de talents, le réseautage professionnel et l'inspiration collective à travers le partage de projets publics.
+
+Onglets de Gestion et d'Assistance
+========================================
+
+.. image:: _static/onglets_gestion.png
+   :alt: Interface de Gestion et d'Assistance Utilisateur
+   :align: center
+   :width: 80%
+
+L'interface utilisateur intègre un système complet de gestion et d'assistance à travers trois onglets fondamentaux. L'onglet À Propos fournit le contexte de la plateforme, présente des statistiques globales et valorise les contributions des utilisateurs, renforçant ainsi la transparence et l'engagement.
+
+L'onglet Paramètres offre un contrôle granulaire sur la personnalisation de l'expérience, les préférences de confidentialité et la gestion du compte. L'onglet Centre d'Aide propose une documentation structurée et une FAQ intelligente, permettant aux utilisateurs de résoudre de manière autonome les problèmes et de maîtriser les fonctionnalités avancées.
 
 
-Contact & Contribution
-======================
+Résultats
+========================================
 
-.. admonition:: Informations Projet
-   :class: tip
+.. image:: _static/placeholder_1.png
+   :alt: Tableau de bord principal avec métriques
+   :align: center
+   :width: 45%
 
-   **Développeur** : Oussama Fahim
-   
-   **Institution** : ENSAM Meknès, Université Moulay Ismail
-   
-   **Encadrants** : 
-   
-   * M. Tawfik Masrour (Chef de Filière, Expert IA & Génie Industriel)
-   * Mme Ibtissam El Hassani (Experte Design Industriel)
-   
-   **Année** : 2024-2025
-   
-   **Type** : Projet d'Expertise en Génie Industriel
+.. image:: _static/placeholder_2.png
+   :alt: Interface d'édition de projet avec outils IA
+   :align: center
+   :width: 45%
 
-.. note::
-   Cette documentation est en constante évolution. Pour toute question, suggestion ou contribution, 
-   n'hésitez pas à consulter la section FAQ ou à contacter l'équipe de développement.
+.. image:: _static/placeholder_3.png
+   :alt: Visualisation 3D interactive d'un design industriel
+   :align: center
+   :width: 45%
 
-----
+.. image:: _static/placeholder_4.png
+   :alt: Fenêtre de collaboration en temps réel avec chat
+   :align: center
+   :width: 45%
+
+.. image:: _static/placeholder_5.png
+   :alt: Galerie communautaire avec filtres de recherche
+   :align: center
+   :width: 45%
+
+.. image:: _static/placeholder_6.png
+   :alt: Analyse de performance d'un projet avec graphiques
+   :align: center
+   :width: 45%
+
+.. image:: _static/placeholder_7.png
+   :alt: Historique des versions avec comparaison visuelle
+   :align: center
+   :width: 45%
+
+.. image:: _static/placeholder_8.png
+   :alt: Menu d'export avec prévisualisation multi-formats
+   :align: center
+   :width: 45%
+
+.. image:: _static/placeholder_9.png
+   :alt: Interface d'administration avec statistiques système
+   :align: center
+   :width: 45%
+
+.. image:: _static/placeholder_10.png
+   :alt: Version mobile responsive de la plateforme
+   :align: center
+   :width: 45%
+
+La mise en œuvre de cette architecture a permis de délivrer une plateforme opérationnelle complète. Les performances techniques répondent aux objectifs initiaux avec des temps de réponse optimisés et une disponibilité élevée. L'expérience utilisateur a été validée comme intuitive et productive, supportant efficacement les workflows de conception complexes. L'écosystème collaboratif fonctionnel a démontré sa capacité à faciliter les échanges et l'inspiration collective.
+
+Améliorations Futures
+========================================
+
+L'évolution de la plateforme s'orientera vers plusieurs axes stratégiques. Le renforcement des capacités d'intelligence artificielle intégrera des modèles spécialisés pour l'analyse sémantique des briefs créatifs et la suggestion automatisée d'améliorations de design. L'expansion des fonctionnalités de réalité augmentée permettra la visualisation de modèles dans des environnements physiques.
+
+L'architecture technique évoluera vers une distribution géographique plus poussée des services pour réduire la latence perçue par les utilisateurs internationaux. Des interfaces de programmation supplémentaires seront exposées pour permettre des intégrations avec les outils professionnels du secteur industriel. La personnalisation avancée des espaces de travail et l'automatisation des rapports d'avancement compléteront les futures itérations.
+
+
+Conclusion
+========================================
+
+Ideate Studio représente une réalisation technique complète intégrant des technologies modernes au service d'un écosystème collaboratif innovant. L'architecture conçue assure une base scalable et performante pour le développement continu de la plateforme. La synthèse réussie entre outils de conception assistée, gestion de projet et réseau professionnel crée une valeur distinctive dans le paysage des solutions de design industriel.
+
+La plateforme démontre la faisabilité d'intégrer des composants complexes - intelligence artificielle, bases de données temps réel, visualisation 3D - dans une expérience utilisateur cohérente. Cette implémentation jette les bases solides pour les évolutions futures, positionnant la solution comme un environnement numérique complet pour la conception industrielle collaborative. Le modèle établi ouvre des perspectives significatives pour l'innovation continue dans les workflows créatifs professionnels.
+
+
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
 
 
