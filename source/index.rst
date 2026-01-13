@@ -8,7 +8,7 @@ Ideate Studio - Documentation Technique
 .. image:: image/prrr.png
    :alt: Ideate Studio Logo
    :align: center
-   :width: 500px
+   :width: 600px
 
 .. centered:: **Plateforme Intelligente de Design Industriel avec Analyse DfX**
 
@@ -320,6 +320,7 @@ Contact & Contribution
 ----
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
 
 
 
