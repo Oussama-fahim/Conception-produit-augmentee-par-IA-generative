@@ -17,7 +17,7 @@ Ideate Studio - Documentation Technique
 
    Réalisé par : Oussama Fahim    
 
-  Encadré par : Mr. Tawfik Masrour et Mrs. Ibtissam El Hassani
+   Encadré par : Mr. Tawfik Masrour et Mrs. Ibtissam El Hassani
 
 ----
 
@@ -333,3 +333,4 @@ Contact & Contribution
 ----
 
 .. centered:: © 2025 Ideate Studio - ENSAM Meknès. Tous droits réservés.
+
